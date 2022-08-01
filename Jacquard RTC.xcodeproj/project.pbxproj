@@ -11,6 +11,8 @@
 		F21CC85E28985D6D00C7FEED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CC85D28985D6D00C7FEED /* ContentView.swift */; };
 		F21CC86028985D6D00C7FEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC85F28985D6D00C7FEED /* Assets.xcassets */; };
 		F21CC86428985D6D00C7FEED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */; };
+		F21CC86C28985DA600C7FEED /* JacquardSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F21CC86B28985DA600C7FEED /* JacquardSDK */; };
+		F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		F21CC85F28985D6D00C7FEED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21CC86128985D6D00C7FEED /* Jacquard_RTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_RTC.entitlements; sourceTree = "<group>"; };
 		F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jacquard-RTC-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F21CC86C28985DA600C7FEED /* JacquardSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +57,10 @@
 		F21CC85A28985D6D00C7FEED /* Jacquard RTC */ = {
 			isa = PBXGroup;
 			children = (
+				F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */,
 				F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */,
 				F21CC85D28985D6D00C7FEED /* ContentView.swift */,
+				F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */,
 				F21CC85F28985D6D00C7FEED /* Assets.xcassets */,
 				F21CC86128985D6D00C7FEED /* Jacquard_RTC.entitlements */,
 				F21CC86228985D6D00C7FEED /* Preview Content */,
@@ -85,6 +92,9 @@
 			dependencies = (
 			);
 			name = "Jacquard RTC";
+			packageProductDependencies = (
+				F21CC86B28985DA600C7FEED /* JacquardSDK */,
+			);
 			productName = "Jacquard RTC";
 			productReference = F21CC85828985D6D00C7FEED /* Jacquard RTC.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +123,9 @@
 				Base,
 			);
 			mainGroup = F21CC84F28985D6D00C7FEED;
+			packageReferences = (
+				F21CC86A28985DA600C7FEED /* XCRemoteSwiftPackageReference "JacquardSDKiOS" */,
+			);
 			productRefGroup = F21CC85928985D6D00C7FEED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F21CC85E28985D6D00C7FEED /* ContentView.swift in Sources */,
+				F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */,
 				F21CC85C28985D6D00C7FEED /* Jacquard_RTCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +275,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "Jacquard RTC/Jacquard_RTC.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -269,10 +284,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Jacquard-RTC-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard RTC";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -281,10 +300,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-RTC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -293,6 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "Jacquard RTC/Jacquard_RTC.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -301,10 +323,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Jacquard-RTC-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard RTC";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -313,10 +339,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-RTC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -342,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F21CC86A28985DA600C7FEED /* XCRemoteSwiftPackageReference "JacquardSDKiOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/JacquardSDKiOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F21CC86B28985DA600C7FEED /* JacquardSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F21CC86A28985DA600C7FEED /* XCRemoteSwiftPackageReference "JacquardSDKiOS" */;
+			productName = JacquardSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F21CC85028985D6D00C7FEED /* Project object */;
 }
