@@ -12,6 +12,10 @@
 		F21CC86028985D6D00C7FEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC85F28985D6D00C7FEED /* Assets.xcassets */; };
 		F21CC86428985D6D00C7FEED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */; };
 		F21CC86C28985DA600C7FEED /* JacquardSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F21CC86B28985DA600C7FEED /* JacquardSDK */; };
+		F2509C31289890D400BD2057 /* BonjourBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C30289890D400BD2057 /* BonjourBrowser.swift */; };
+		F2509C342898911700BD2057 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C332898911700BD2057 /* Logger.swift */; };
+		F2509C362898913300BD2057 /* BonjourConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C352898913300BD2057 /* BonjourConnection.swift */; };
+		F2509C382898916C00BD2057 /* WireProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C372898916C00BD2057 /* WireProtocol.swift */; };
 		F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,10 @@
 		F21CC86128985D6D00C7FEED /* Jacquard_RTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_RTC.entitlements; sourceTree = "<group>"; };
 		F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jacquard-RTC-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F2509C30289890D400BD2057 /* BonjourBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourBrowser.swift; sourceTree = "<group>"; };
+		F2509C332898911700BD2057 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F2509C352898913300BD2057 /* BonjourConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourConnection.swift; sourceTree = "<group>"; };
+		F2509C372898916C00BD2057 /* WireProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireProtocol.swift; sourceTree = "<group>"; };
 		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +65,8 @@
 		F21CC85A28985D6D00C7FEED /* Jacquard RTC */ = {
 			isa = PBXGroup;
 			children = (
+				F2509C322898910100BD2057 /* Utilities */,
+				F2509C2F289890AD00BD2057 /* Networking */,
 				F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */,
 				F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */,
 				F21CC85D28985D6D00C7FEED /* ContentView.swift */,
@@ -74,6 +84,24 @@
 				F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F2509C2F289890AD00BD2057 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F2509C30289890D400BD2057 /* BonjourBrowser.swift */,
+				F2509C352898913300BD2057 /* BonjourConnection.swift */,
+				F2509C372898916C00BD2057 /* WireProtocol.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F2509C322898910100BD2057 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F2509C332898911700BD2057 /* Logger.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +180,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2509C342898911700BD2057 /* Logger.swift in Sources */,
+				F2509C382898916C00BD2057 /* WireProtocol.swift in Sources */,
 				F21CC85E28985D6D00C7FEED /* ContentView.swift in Sources */,
 				F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */,
+				F2509C31289890D400BD2057 /* BonjourBrowser.swift in Sources */,
 				F21CC85C28985D6D00C7FEED /* Jacquard_RTCApp.swift in Sources */,
+				F2509C362898913300BD2057 /* BonjourConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
