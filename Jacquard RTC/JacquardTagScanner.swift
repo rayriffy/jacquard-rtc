@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import JacquardSDK
+import CoreBluetooth
 
 extension AnyCancellable {
     func addTo(_ array: inout [AnyCancellable]) {
@@ -20,7 +21,12 @@ class JacquardTagScanner: ObservableObject {
     @Published var advertisedTags: [AdvertisedTag] = []
     @Published var observations: [AnyCancellable] = []
     
-    let jacquardManager: JacquardManager = JacquardManagerImplementation()
+    let jacquardManager: JacquardManager = JacquardManagerImplementation(
+        options: [CBCentralManagerOptionRestoreIdentifierKey: "riffy-jacquardrtc-state"],
+        config: SDKConfig(
+            apiKey: "AIzaSyA5mkMfJ6eWmIf54Cy2kpXZf487P3g-9D8"
+        )
+    )
     
     init () {
         jacquardManager.advertisingTags.sink {

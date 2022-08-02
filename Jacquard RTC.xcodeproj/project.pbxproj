@@ -12,11 +12,32 @@
 		F21CC86028985D6D00C7FEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC85F28985D6D00C7FEED /* Assets.xcassets */; };
 		F21CC86428985D6D00C7FEED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */; };
 		F21CC86C28985DA600C7FEED /* JacquardSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F21CC86B28985DA600C7FEED /* JacquardSDK */; };
+		F243AF332899342500B4B81F /* LocalNetworkActorSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F243AF322899342500B4B81F /* LocalNetworkActorSystem.swift */; };
+		F243AF36289934CF00B4B81F /* LocalNetworkCallEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F243AF35289934CF00B4B81F /* LocalNetworkCallEncoder.swift */; };
+		F243AF38289934EB00B4B81F /* LocalNetworkCallDecoder-.swift in Sources */ = {isa = PBXBuildFile; fileRef = F243AF37289934EB00B4B81F /* LocalNetworkCallDecoder-.swift */; };
+		F243AF3B289935BA00B4B81F /* ActorIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F243AF3A289935BA00B4B81F /* ActorIdentity.swift */; };
+		F243AF3D2899390600B4B81F /* ReceptionistPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F243AF3C2899390600B4B81F /* ReceptionistPattern.swift */; };
 		F2509C31289890D400BD2057 /* BonjourBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C30289890D400BD2057 /* BonjourBrowser.swift */; };
 		F2509C342898911700BD2057 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C332898911700BD2057 /* Logger.swift */; };
 		F2509C362898913300BD2057 /* BonjourConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C352898913300BD2057 /* BonjourConnection.swift */; };
 		F2509C382898916C00BD2057 /* WireProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C372898916C00BD2057 /* WireProtocol.swift */; };
+		F2509C3A289892AA00BD2057 /* LocalNetworkReceptionist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2509C39289892AA00BD2057 /* LocalNetworkReceptionist.swift */; };
 		F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */; };
+		F2B5F56D2899482E00115789 /* JacquardAct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F56C2899482E00115789 /* JacquardAct.swift */; };
+		F2B5F56F2899487300115789 /* JacquardDeliver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F56E2899487300115789 /* JacquardDeliver.swift */; };
+		F2B5F574289953A200115789 /* ConnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F573289953A200115789 /* ConnectingView.swift */; };
+		F2E5AE8328992E00007F70B7 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE8228992E00007F70B7 /* NIO */; };
+		F2E5AE8528992E00007F70B7 /* NIOConcurrencyHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE8428992E00007F70B7 /* NIOConcurrencyHelpers */; };
+		F2E5AE8728992E00007F70B7 /* NIOCore in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE8628992E00007F70B7 /* NIOCore */; };
+		F2E5AE8928992E00007F70B7 /* NIOEmbedded in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE8828992E00007F70B7 /* NIOEmbedded */; };
+		F2E5AE8B28992E00007F70B7 /* NIOFoundationCompat in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE8A28992E00007F70B7 /* NIOFoundationCompat */; };
+		F2E5AE8D28992E00007F70B7 /* NIOHTTP1 in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE8C28992E00007F70B7 /* NIOHTTP1 */; };
+		F2E5AE8F28992E00007F70B7 /* NIOPosix in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE8E28992E00007F70B7 /* NIOPosix */; };
+		F2E5AE9128992E00007F70B7 /* NIOTLS in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE9028992E00007F70B7 /* NIOTLS */; };
+		F2E5AE9328992E00007F70B7 /* NIOTestUtils in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE9228992E00007F70B7 /* NIOTestUtils */; };
+		F2E5AE9528992E00007F70B7 /* NIOWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE9428992E00007F70B7 /* NIOWebSocket */; };
+		F2E5AE9728992E00007F70B7 /* _NIOConcurrency in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE9628992E00007F70B7 /* _NIOConcurrency */; };
+		F2E5AE9A28992E28007F70B7 /* NIOTransportServices in Frameworks */ = {isa = PBXBuildFile; productRef = F2E5AE9928992E28007F70B7 /* NIOTransportServices */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +48,20 @@
 		F21CC86128985D6D00C7FEED /* Jacquard_RTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_RTC.entitlements; sourceTree = "<group>"; };
 		F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jacquard-RTC-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F243AF322899342500B4B81F /* LocalNetworkActorSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworkActorSystem.swift; sourceTree = "<group>"; };
+		F243AF35289934CF00B4B81F /* LocalNetworkCallEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworkCallEncoder.swift; sourceTree = "<group>"; };
+		F243AF37289934EB00B4B81F /* LocalNetworkCallDecoder-.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalNetworkCallDecoder-.swift"; sourceTree = "<group>"; };
+		F243AF3A289935BA00B4B81F /* ActorIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorIdentity.swift; sourceTree = "<group>"; };
+		F243AF3C2899390600B4B81F /* ReceptionistPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptionistPattern.swift; sourceTree = "<group>"; };
 		F2509C30289890D400BD2057 /* BonjourBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourBrowser.swift; sourceTree = "<group>"; };
 		F2509C332898911700BD2057 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		F2509C352898913300BD2057 /* BonjourConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonjourConnection.swift; sourceTree = "<group>"; };
 		F2509C372898916C00BD2057 /* WireProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireProtocol.swift; sourceTree = "<group>"; };
+		F2509C39289892AA00BD2057 /* LocalNetworkReceptionist.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = LocalNetworkReceptionist.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; };
+		F2B5F56C2899482E00115789 /* JacquardAct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JacquardAct.swift; sourceTree = "<group>"; };
+		F2B5F56E2899487300115789 /* JacquardDeliver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JacquardDeliver.swift; sourceTree = "<group>"; };
+		F2B5F573289953A200115789 /* ConnectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +69,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E5AE8528992E00007F70B7 /* NIOConcurrencyHelpers in Frameworks */,
+				F2E5AE8F28992E00007F70B7 /* NIOPosix in Frameworks */,
 				F21CC86C28985DA600C7FEED /* JacquardSDK in Frameworks */,
+				F2E5AE9728992E00007F70B7 /* _NIOConcurrency in Frameworks */,
+				F2E5AE8728992E00007F70B7 /* NIOCore in Frameworks */,
+				F2E5AE9A28992E28007F70B7 /* NIOTransportServices in Frameworks */,
+				F2E5AE8D28992E00007F70B7 /* NIOHTTP1 in Frameworks */,
+				F2E5AE9328992E00007F70B7 /* NIOTestUtils in Frameworks */,
+				F2E5AE9128992E00007F70B7 /* NIOTLS in Frameworks */,
+				F2E5AE8328992E00007F70B7 /* NIO in Frameworks */,
+				F2E5AE8B28992E00007F70B7 /* NIOFoundationCompat in Frameworks */,
+				F2E5AE9528992E00007F70B7 /* NIOWebSocket in Frameworks */,
+				F2E5AE8928992E00007F70B7 /* NIOEmbedded in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +107,8 @@
 		F21CC85A28985D6D00C7FEED /* Jacquard RTC */ = {
 			isa = PBXGroup;
 			children = (
+				F2B5F5702899537A00115789 /* Views */,
+				F243AF39289935AF00B4B81F /* Actor */,
 				F2509C322898910100BD2057 /* Utilities */,
 				F2509C2F289890AD00BD2057 /* Networking */,
 				F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */,
@@ -86,9 +130,32 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F243AF34289934B600B4B81F /* LocalNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				F2509C39289892AA00BD2057 /* LocalNetworkReceptionist.swift */,
+				F243AF322899342500B4B81F /* LocalNetworkActorSystem.swift */,
+				F243AF35289934CF00B4B81F /* LocalNetworkCallEncoder.swift */,
+				F243AF37289934EB00B4B81F /* LocalNetworkCallDecoder-.swift */,
+				F243AF3C2899390600B4B81F /* ReceptionistPattern.swift */,
+			);
+			path = LocalNetwork;
+			sourceTree = "<group>";
+		};
+		F243AF39289935AF00B4B81F /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				F243AF3A289935BA00B4B81F /* ActorIdentity.swift */,
+				F2B5F56C2899482E00115789 /* JacquardAct.swift */,
+				F2B5F56E2899487300115789 /* JacquardDeliver.swift */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
 		F2509C2F289890AD00BD2057 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F243AF34289934B600B4B81F /* LocalNetwork */,
 				F2509C30289890D400BD2057 /* BonjourBrowser.swift */,
 				F2509C352898913300BD2057 /* BonjourConnection.swift */,
 				F2509C372898916C00BD2057 /* WireProtocol.swift */,
@@ -102,6 +169,14 @@
 				F2509C332898911700BD2057 /* Logger.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F2B5F5702899537A00115789 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2B5F573289953A200115789 /* ConnectingView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +197,18 @@
 			name = "Jacquard RTC";
 			packageProductDependencies = (
 				F21CC86B28985DA600C7FEED /* JacquardSDK */,
+				F2E5AE8228992E00007F70B7 /* NIO */,
+				F2E5AE8428992E00007F70B7 /* NIOConcurrencyHelpers */,
+				F2E5AE8628992E00007F70B7 /* NIOCore */,
+				F2E5AE8828992E00007F70B7 /* NIOEmbedded */,
+				F2E5AE8A28992E00007F70B7 /* NIOFoundationCompat */,
+				F2E5AE8C28992E00007F70B7 /* NIOHTTP1 */,
+				F2E5AE8E28992E00007F70B7 /* NIOPosix */,
+				F2E5AE9028992E00007F70B7 /* NIOTLS */,
+				F2E5AE9228992E00007F70B7 /* NIOTestUtils */,
+				F2E5AE9428992E00007F70B7 /* NIOWebSocket */,
+				F2E5AE9628992E00007F70B7 /* _NIOConcurrency */,
+				F2E5AE9928992E28007F70B7 /* NIOTransportServices */,
 			);
 			productName = "Jacquard RTC";
 			productReference = F21CC85828985D6D00C7FEED /* Jacquard RTC.app */;
@@ -153,6 +240,8 @@
 			mainGroup = F21CC84F28985D6D00C7FEED;
 			packageReferences = (
 				F21CC86A28985DA600C7FEED /* XCRemoteSwiftPackageReference "JacquardSDKiOS" */,
+				F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */,
+				F2E5AE9828992E28007F70B7 /* XCRemoteSwiftPackageReference "swift-nio-transport-services" */,
 			);
 			productRefGroup = F21CC85928985D6D00C7FEED /* Products */;
 			projectDirPath = "";
@@ -181,12 +270,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2509C342898911700BD2057 /* Logger.swift in Sources */,
+				F243AF3B289935BA00B4B81F /* ActorIdentity.swift in Sources */,
+				F2B5F574289953A200115789 /* ConnectingView.swift in Sources */,
+				F2B5F56F2899487300115789 /* JacquardDeliver.swift in Sources */,
+				F243AF3D2899390600B4B81F /* ReceptionistPattern.swift in Sources */,
 				F2509C382898916C00BD2057 /* WireProtocol.swift in Sources */,
 				F21CC85E28985D6D00C7FEED /* ContentView.swift in Sources */,
 				F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */,
+				F2B5F56D2899482E00115789 /* JacquardAct.swift in Sources */,
+				F243AF38289934EB00B4B81F /* LocalNetworkCallDecoder-.swift in Sources */,
+				F243AF332899342500B4B81F /* LocalNetworkActorSystem.swift in Sources */,
 				F2509C31289890D400BD2057 /* BonjourBrowser.swift in Sources */,
 				F21CC85C28985D6D00C7FEED /* Jacquard_RTCApp.swift in Sources */,
 				F2509C362898913300BD2057 /* BonjourConnection.swift in Sources */,
+				F2509C3A289892AA00BD2057 /* LocalNetworkReceptionist.swift in Sources */,
+				F243AF36289934CF00B4B81F /* LocalNetworkCallEncoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +510,22 @@
 				minimumVersion = 0.2.0;
 			};
 		};
+		F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		F2E5AE9828992E28007F70B7 /* XCRemoteSwiftPackageReference "swift-nio-transport-services" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio-transport-services.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -419,6 +533,66 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F21CC86A28985DA600C7FEED /* XCRemoteSwiftPackageReference "JacquardSDKiOS" */;
 			productName = JacquardSDK;
+		};
+		F2E5AE8228992E00007F70B7 /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+		F2E5AE8428992E00007F70B7 /* NIOConcurrencyHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOConcurrencyHelpers;
+		};
+		F2E5AE8628992E00007F70B7 /* NIOCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOCore;
+		};
+		F2E5AE8828992E00007F70B7 /* NIOEmbedded */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOEmbedded;
+		};
+		F2E5AE8A28992E00007F70B7 /* NIOFoundationCompat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOFoundationCompat;
+		};
+		F2E5AE8C28992E00007F70B7 /* NIOHTTP1 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOHTTP1;
+		};
+		F2E5AE8E28992E00007F70B7 /* NIOPosix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOPosix;
+		};
+		F2E5AE9028992E00007F70B7 /* NIOTLS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOTLS;
+		};
+		F2E5AE9228992E00007F70B7 /* NIOTestUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOTestUtils;
+		};
+		F2E5AE9428992E00007F70B7 /* NIOWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOWebSocket;
+		};
+		F2E5AE9628992E00007F70B7 /* _NIOConcurrency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE8128992E00007F70B7 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = _NIOConcurrency;
+		};
+		F2E5AE9928992E28007F70B7 /* NIOTransportServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2E5AE9828992E28007F70B7 /* XCRemoteSwiftPackageReference "swift-nio-transport-services" */;
+			productName = NIOTransportServices;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
