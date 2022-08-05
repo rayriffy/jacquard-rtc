@@ -11,35 +11,54 @@ import JacquardSDK
 
 struct ContentView: View {
     @State private var jacquardTags: [AnyCancellable] = []
+    @State private var isPageTransition: Bool = false
+    @State private var selectedTagUUID: UUID = UUID()
 
-    let jacquardScanner = JacquardTagScanner()
+    @StateObject var jacquardScanner = JacquardTagScanner()
 
     var body: some View {
-        NavigationView {
-            List {
-                Section {
-                    ForEach (jacquardScanner.preConnectedTags, id: \.self.identifier) {
-                        advertisedTag in
-                        Text(advertisedTag.displayName).padding()
+        NavigationStack {
+            VStack {
+                List {
+                    Section {
+                        ForEach ($jacquardScanner.preConnectedTags, id: \.self.identifier) {
+                            $advertisedTag in
+                            NavigationLink(advertisedTag.displayName, value: advertisedTag.identifier)
+//                            Text(advertisedTag.displayName).padding().onTapGesture {
+//                                selectedTagUUID = advertisedTag.identifier
+//                                isPageTransition = true
+//                            }
+                        }
+                    } header: {
+                        Text("Connected tags")
                     }
-                } header: {
-                    Text("Connected tags")
-                }
-                Section {
-                    ForEach (jacquardScanner.advertisedTags, id: \.self.identifier) {
-                        advertisedTag in
-                        Text(advertisedTag.displayName).padding()
+                    Section {
+                        Text("Jaags")
+                        ForEach ($jacquardScanner.advertisedTags, id: \.self.identifier) {
+                            $advertisedTag in
+                                NavigationLink(advertisedTag.displayName, value: advertisedTag.identifier)
+//                            Text(advertisedTag.displayName).padding().onTapGesture {
+//                                selectedTagUUID = advertisedTag.identifier
+//                                isPageTransition = true
+//                            }
+                        }
+                    } header: {
+                        Text("Discovered tags")
                     }
-                } header: {
-                    Text("Discovered tags")
+                }.navigationTitle("Jacquard tags").navigationDestination(for: UUID.self) { uuid in
+                    ConnectingView(manager: jacquardScanner.jacquardManager, tagId: uuid)
                 }
-            }.navigationTitle("Jacquard tags")
-        }
-    }
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+//                NavigationLink(
+//                    destination: ConnectingView(
+//                        manager: jacquardScanner.jacquardManager,
+//                        tagId: selectedTagUUID
+//                    ),
+//                    isActive: $isPageTransition
+//                ) {
+//                    EmptyView()
+//                }
+            }
+        }
     }
 }

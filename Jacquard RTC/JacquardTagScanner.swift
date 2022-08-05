@@ -21,7 +21,7 @@ class JacquardTagScanner: ObservableObject {
     @Published var advertisedTags: [AdvertisedTag] = []
     @Published var observations: [AnyCancellable] = []
     
-    let jacquardManager: JacquardManager = JacquardManagerImplementation(
+    @Published var jacquardManager: JacquardManager = JacquardManagerImplementation(
         options: [CBCentralManagerOptionRestoreIdentifierKey: "riffy-jacquardrtc-state"],
         config: SDKConfig(
             apiKey: "AIzaSyA5mkMfJ6eWmIf54Cy2kpXZf487P3g-9D8"
@@ -34,6 +34,7 @@ class JacquardTagScanner: ObservableObject {
             print("found jacquard tag \(advertisedTag.displayName)")
             
             guard let self = self else { return }
+            print("append array")
             self.advertisedTags.append(advertisedTag)
         }.addTo(&observations)
         

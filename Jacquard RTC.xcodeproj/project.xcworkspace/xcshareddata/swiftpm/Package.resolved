@@ -10,21 +10,12 @@
       }
     },
     {
-      "identity" : "swift-nio",
+      "identity" : "multipeerkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-nio.git",
+      "location" : "https://github.com/insidegui/MultipeerKit.git",
       "state" : {
-        "revision" : "124119f0bb12384cef35aa041d7c3a686108722d",
-        "version" : "2.40.0"
-      }
-    },
-    {
-      "identity" : "swift-nio-transport-services",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-nio-transport-services.git",
-      "state" : {
-        "revision" : "2cb54f91ddafc90832c5fa247faf5798d0a7c204",
-        "version" : "1.13.0"
+        "revision" : "ee013fd04f20166ea40ff456a67058c040289c1c",
+        "version" : "0.4.0"
       }
     },
     {
