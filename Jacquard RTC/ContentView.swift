@@ -29,7 +29,6 @@ struct ContentView: View {
                         Text("Connected tags")
                     }
                     Section {
-                        Text("Jaags")
                         ForEach ($jacquardScanner.advertisedTags, id: \.self.identifier) {
                             $advertisedTag in
                                 NavigationLink(advertisedTag.displayName, value: advertisedTag.identifier)
