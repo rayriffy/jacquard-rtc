@@ -24,10 +24,6 @@ struct ContentView: View {
                         ForEach ($jacquardScanner.preConnectedTags, id: \.self.identifier) {
                             $advertisedTag in
                             NavigationLink(advertisedTag.displayName, value: advertisedTag.identifier)
-//                            Text(advertisedTag.displayName).padding().onTapGesture {
-//                                selectedTagUUID = advertisedTag.identifier
-//                                isPageTransition = true
-//                            }
                         }
                     } header: {
                         Text("Connected tags")
@@ -37,27 +33,15 @@ struct ContentView: View {
                         ForEach ($jacquardScanner.advertisedTags, id: \.self.identifier) {
                             $advertisedTag in
                                 NavigationLink(advertisedTag.displayName, value: advertisedTag.identifier)
-//                            Text(advertisedTag.displayName).padding().onTapGesture {
-//                                selectedTagUUID = advertisedTag.identifier
-//                                isPageTransition = true
-//                            }
                         }
                     } header: {
                         Text("Discovered tags")
                     }
-                }.navigationTitle("Jacquard tags").navigationDestination(for: UUID.self) { uuid in
+                }
+                .navigationTitle("Jacquard tags")
+                .navigationDestination(for: UUID.self) { uuid in
                     ConnectingView(manager: jacquardScanner.jacquardManager, tagId: uuid)
                 }
-
-//                NavigationLink(
-//                    destination: ConnectingView(
-//                        manager: jacquardScanner.jacquardManager,
-//                        tagId: selectedTagUUID
-//                    ),
-//                    isActive: $isPageTransition
-//                ) {
-//                    EmptyView()
-//                }
             }
         }
     }

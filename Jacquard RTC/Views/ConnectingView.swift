@@ -10,17 +10,12 @@ import Combine
 import JacquardSDK
 
 struct ConnectingView: View {
-//    @Binding var jacquardTagId: UUID
-//    @Binding var jacquardManager: JacquardManager
     @State private var connectedTag: ConnectedTag? = nil
     @State private var isPageTransition: Bool = false
     
     private var connectionStream: AnyPublisher<TagConnectionState, Never>?
 
     init(manager: JacquardManager, tagId: UUID) {
-//        self._jacquardTagId = tagId
-//        self._jacquardManager = manager
-
         // perform actions to connect to jacquard tag
         print("tag connect request")
         print(tagId)
@@ -42,18 +37,13 @@ struct ConnectingView: View {
         // monitor connection state
         print("connectionStream")
         print(self.connectionStream)
-        self.connectionStream?.sink {
-            print("sink")
-            print($0)
-        }
 
         let tagOrNilPublisher = self.connectionStream?.map {
             [self] state -> ConnectedTag? in
-                print("state update")
+                print("state update: ")
                 print(state)
               if case .connected(let tag) = state {
                   print("tag connected")
-                  print("tag")
                   self.connectedTag = tag
                   self.isPageTransition = true
                   return tag
@@ -67,9 +57,6 @@ struct ConnectingView: View {
                 }
                 return false
         }
-        
-        // observe tag
-        
     }
 
     var body: some View {
@@ -82,9 +69,3 @@ struct ConnectingView: View {
         }
     }
 }
-
-//struct ConnectingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ConnectingView()
-//    }
-//}
