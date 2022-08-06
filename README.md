@@ -24,4 +24,4 @@ How to get it?
 
 Build with Xcode 14 or higher, app will not be distributed to App Store Connect so you have to build and upload running builds to your phone by yourself.
 
-There's an *.ipa* and *.app* provided in [Relase]() page of repository. Just in case if you want to install iOS app via AltStore but I cannot garantee that it will work.
+There's an *.ipa* and *.app* provided in [Release](https://github.com/rayriffy/jacquard-rtc/releases/latest) page of repository. Just in case if you want to install iOS app via AltStore but I cannot garantee that it will work.
