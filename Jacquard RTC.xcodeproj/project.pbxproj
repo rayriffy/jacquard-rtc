@@ -18,21 +18,23 @@
 		F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */; };
 		F2B5F574289953A200115789 /* ConnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F573289953A200115789 /* ConnectingView.swift */; };
 		F2B5F5762899687100115789 /* PeerConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F5752899687100115789 /* PeerConnectionView.swift */; };
+		F2C36787289EA5B600927197 /* JacquardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C36786289EA5B600927197 /* JacquardManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F21CC85828985D6D00C7FEED /* Jacquard RTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jacquard RTC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jacquard_RTCApp.swift; sourceTree = "<group>"; };
-		F21CC85D28985D6D00C7FEED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Jacquard_RTCApp.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F21CC85D28985D6D00C7FEED /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F21CC85F28985D6D00C7FEED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21CC86128985D6D00C7FEED /* Jacquard_RTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_RTC.entitlements; sourceTree = "<group>"; };
 		F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jacquard-RTC-Info.plist"; sourceTree = SOURCE_ROOT; };
-		F24B970C289D2D100062727E /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
-		F24B9712289D35F50062727E /* TransmitterPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterPayload.swift; sourceTree = "<group>"; };
-		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; };
-		F2B5F573289953A200115789 /* ConnectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; };
-		F2B5F5752899687100115789 /* PeerConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnectionView.swift; sourceTree = "<group>"; };
+		F24B970C289D2D100062727E /* ControllerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F24B9712289D35F50062727E /* TransmitterPayload.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TransmitterPayload.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F2B5F573289953A200115789 /* ConnectingView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F2B5F5752899687100115789 /* PeerConnectionView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PeerConnectionView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F2C36786289EA5B600927197 /* JacquardManager.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JacquardManager.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		F21CC85A28985D6D00C7FEED /* Jacquard RTC */ = {
 			isa = PBXGroup;
 			children = (
+				F2C36785289EA5AA00927197 /* Extensions */,
 				F24B9711289D35E00062727E /* Codable */,
 				F2B5F5702899537A00115789 /* Views */,
 				F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */,
@@ -104,6 +107,14 @@
 				F24B970C289D2D100062727E /* ControllerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F2C36785289EA5AA00927197 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2C36786289EA5B600927197 /* JacquardManager.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				F2B5F5762899687100115789 /* PeerConnectionView.swift in Sources */,
 				F21CC85E28985D6D00C7FEED /* ContentView.swift in Sources */,
 				F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */,
+				F2C36787289EA5B600927197 /* JacquardManager.swift in Sources */,
 				F21CC85C28985D6D00C7FEED /* Jacquard_RTCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
