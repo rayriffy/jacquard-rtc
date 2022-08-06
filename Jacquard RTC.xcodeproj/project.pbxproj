@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F21CC85C28985D6D00C7FEED /* Jacquard_RTCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */; };
+		F21CC85C28985D6D00C7FEED /* Jacquard_TransmitterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CC85B28985D6D00C7FEED /* Jacquard_TransmitterApp.swift */; };
 		F21CC85E28985D6D00C7FEED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21CC85D28985D6D00C7FEED /* ContentView.swift */; };
 		F21CC86028985D6D00C7FEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC85F28985D6D00C7FEED /* Assets.xcassets */; };
 		F21CC86428985D6D00C7FEED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */; };
@@ -24,7 +24,6 @@
 		F2C36793289EB07300927197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C36792289EB07300927197 /* Assets.xcassets */; };
 		F2C36796289EB07300927197 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C36795289EB07300927197 /* Preview Assets.xcassets */; };
 		F2C3679D289EB0C500927197 /* MultipeerKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2C3679C289EB0C500927197 /* MultipeerKit */; };
-		F2C3679F289EB97800927197 /* Jacquard-RTC-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */; };
 		F2C367A3289ECE1A00927197 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367A2289ECE1A00927197 /* Cancellable.swift */; };
 		F2C367A5289ECF6E00927197 /* AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367A4289ECF6E00927197 /* AnyCancellable.swift */; };
 		F2C367A7289ED8AC00927197 /* TransmitterPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B9712289D35F50062727E /* TransmitterPayload.swift */; };
@@ -36,12 +35,12 @@
 
 /* Begin PBXFileReference section */
 		F21CC85828985D6D00C7FEED /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Jacquard_RTCApp.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F21CC85B28985D6D00C7FEED /* Jacquard_TransmitterApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Jacquard_TransmitterApp.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F21CC85D28985D6D00C7FEED /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F21CC85F28985D6D00C7FEED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21CC86128985D6D00C7FEED /* Jacquard_RTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_RTC.entitlements; sourceTree = "<group>"; };
 		F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jacquard-RTC-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F21CC86D28985E2400C7FEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		F24B970C289D2D100062727E /* ControllerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F24B9712289D35F50062727E /* TransmitterPayload.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TransmitterPayload.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -87,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C367A6289ED8A100927197 /* Shared */,
-				F21CC85A28985D6D00C7FEED /* Jacquard RTC */,
+				F21CC85A28985D6D00C7FEED /* Jacquard Transmitter */,
 				F2C3678D289EB07300927197 /* Jacquard Receiver */,
 				F21CC85928985D6D00C7FEED /* Products */,
 				F2C3679B289EB0C500927197 /* Frameworks */,
@@ -105,20 +104,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F21CC85A28985D6D00C7FEED /* Jacquard RTC */ = {
+		F21CC85A28985D6D00C7FEED /* Jacquard Transmitter */ = {
 			isa = PBXGroup;
 			children = (
 				F2C36785289EA5AA00927197 /* Extensions */,
 				F2B5F5702899537A00115789 /* Views */,
-				F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */,
-				F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */,
+				F21CC86D28985E2400C7FEED /* Info.plist */,
+				F21CC85B28985D6D00C7FEED /* Jacquard_TransmitterApp.swift */,
 				F21CC85D28985D6D00C7FEED /* ContentView.swift */,
 				F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */,
 				F21CC85F28985D6D00C7FEED /* Assets.xcassets */,
 				F21CC86128985D6D00C7FEED /* Jacquard_RTC.entitlements */,
 				F21CC86228985D6D00C7FEED /* Preview Content */,
 			);
-			path = "Jacquard RTC";
+			path = "Jacquard Transmitter";
 			sourceTree = "<group>";
 		};
 		F21CC86228985D6D00C7FEED /* Preview Content */ = {
@@ -239,7 +238,7 @@
 				F21CC86B28985DA600C7FEED /* JacquardSDK */,
 				F24B970F289D333C0062727E /* MultipeerKit */,
 			);
-			productName = "Jacquard RTC";
+			productName = "Jacquard Transmitter";
 			productReference = F21CC85828985D6D00C7FEED /* iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -312,7 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F21CC86428985D6D00C7FEED /* Preview Assets.xcassets in Resources */,
-				F2C3679F289EB97800927197 /* Jacquard-RTC-Info.plist in Resources */,
 				F21CC86028985D6D00C7FEED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,7 +340,7 @@
 				F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */,
 				F2C367A5289ECF6E00927197 /* AnyCancellable.swift in Sources */,
 				F2C36787289EA5B600927197 /* JacquardManager.swift in Sources */,
-				F21CC85C28985D6D00C7FEED /* Jacquard_RTCApp.swift in Sources */,
+				F21CC85C28985D6D00C7FEED /* Jacquard_TransmitterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,15 +475,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "Jacquard RTC/Jacquard_RTC.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Jacquard Transmitter/Jacquard_RTC.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Jacquard RTC/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Jacquard Transmitter/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Q5KKY45ZN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Jacquard-RTC-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard Transmitter";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Using Bluetooth to locate Jacquard tags";
@@ -519,15 +517,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "Jacquard RTC/Jacquard_RTC.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Jacquard Transmitter/Jacquard_RTC.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Jacquard RTC/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Jacquard Transmitter/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Q5KKY45ZN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Jacquard-RTC-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard Transmitter";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Using Bluetooth to locate Jacquard tags";
