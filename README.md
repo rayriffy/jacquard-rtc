@@ -18,3 +18,10 @@ What's included?
 | Jacquard Transmitter | Jacquard Receiver | 
 | -- | -- |
 | ![](./images/transmitter.jpg) Requiements: **iOS 16.0+**<br /> An iPhone application to foward gestures from Jacquard tag to your Mac  |  ![](./images/receiver.jpg) Requirements: **macOS 12.4+**<br /> A macOS application to recieve Jacquard gesture, and configure keystorke to press |
+
+How to get it?
+---
+
+Build with Xcode 14 or higher, app will not be distributed to App Store Connect so you have to build and upload running builds to your phone by yourself.
+
+There's an *.ipa* and *.app* provided in [Relase]() page of repository. Just in case if you want to install iOS app via AltStore but I cannot garantee that it will work.
