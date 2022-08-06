@@ -19,10 +19,15 @@
 		F2B5F574289953A200115789 /* ConnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F573289953A200115789 /* ConnectingView.swift */; };
 		F2B5F5762899687100115789 /* PeerConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F5752899687100115789 /* PeerConnectionView.swift */; };
 		F2C36787289EA5B600927197 /* JacquardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C36786289EA5B600927197 /* JacquardManager.swift */; };
+		F2C3678F289EB07300927197 /* Jacquard_ReceiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3678E289EB07300927197 /* Jacquard_ReceiverApp.swift */; };
+		F2C36791289EB07300927197 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C36790289EB07300927197 /* ContentView.swift */; };
+		F2C36793289EB07300927197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C36792289EB07300927197 /* Assets.xcassets */; };
+		F2C36796289EB07300927197 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C36795289EB07300927197 /* Preview Assets.xcassets */; };
+		F2C3679D289EB0C500927197 /* MultipeerKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2C3679C289EB0C500927197 /* MultipeerKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F21CC85828985D6D00C7FEED /* Jacquard RTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jacquard RTC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21CC85828985D6D00C7FEED /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Jacquard_RTCApp.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F21CC85D28985D6D00C7FEED /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F21CC85F28985D6D00C7FEED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +40,12 @@
 		F2B5F573289953A200115789 /* ConnectingView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2B5F5752899687100115789 /* PeerConnectionView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PeerConnectionView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2C36786289EA5B600927197 /* JacquardManager.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JacquardManager.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F2C3678C289EB07300927197 /* macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2C3678E289EB07300927197 /* Jacquard_ReceiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jacquard_ReceiverApp.swift; sourceTree = "<group>"; };
+		F2C36790289EB07300927197 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F2C36792289EB07300927197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2C36795289EB07300927197 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2C36797289EB07300927197 /* Jacquard_Receiver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_Receiver.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F2C36789289EB07300927197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2C3679D289EB0C500927197 /* MultipeerKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,14 +73,19 @@
 			isa = PBXGroup;
 			children = (
 				F21CC85A28985D6D00C7FEED /* Jacquard RTC */,
+				F2C3678D289EB07300927197 /* Jacquard Receiver */,
 				F21CC85928985D6D00C7FEED /* Products */,
+				F2C3679B289EB0C500927197 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		F21CC85928985D6D00C7FEED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F21CC85828985D6D00C7FEED /* Jacquard RTC.app */,
+				F21CC85828985D6D00C7FEED /* iOS.app */,
+				F2C3678C289EB07300927197 /* macOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,12 +141,39 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F2C3678D289EB07300927197 /* Jacquard Receiver */ = {
+			isa = PBXGroup;
+			children = (
+				F2C3678E289EB07300927197 /* Jacquard_ReceiverApp.swift */,
+				F2C36790289EB07300927197 /* ContentView.swift */,
+				F2C36792289EB07300927197 /* Assets.xcassets */,
+				F2C36797289EB07300927197 /* Jacquard_Receiver.entitlements */,
+				F2C36794289EB07300927197 /* Preview Content */,
+			);
+			path = "Jacquard Receiver";
+			sourceTree = "<group>";
+		};
+		F2C36794289EB07300927197 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F2C36795289EB07300927197 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F2C3679B289EB0C500927197 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F21CC85728985D6D00C7FEED /* Jacquard RTC */ = {
+		F21CC85728985D6D00C7FEED /* iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F21CC86728985D6D00C7FEED /* Build configuration list for PBXNativeTarget "Jacquard RTC" */;
+			buildConfigurationList = F21CC86728985D6D00C7FEED /* Build configuration list for PBXNativeTarget "iOS" */;
 			buildPhases = (
 				F21CC85428985D6D00C7FEED /* Sources */,
 				F21CC85528985D6D00C7FEED /* Frameworks */,
@@ -132,13 +183,33 @@
 			);
 			dependencies = (
 			);
-			name = "Jacquard RTC";
+			name = iOS;
 			packageProductDependencies = (
 				F21CC86B28985DA600C7FEED /* JacquardSDK */,
 				F24B970F289D333C0062727E /* MultipeerKit */,
 			);
 			productName = "Jacquard RTC";
-			productReference = F21CC85828985D6D00C7FEED /* Jacquard RTC.app */;
+			productReference = F21CC85828985D6D00C7FEED /* iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2C3678B289EB07300927197 /* macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2C36798289EB07300927197 /* Build configuration list for PBXNativeTarget "macOS" */;
+			buildPhases = (
+				F2C36788289EB07300927197 /* Sources */,
+				F2C36789289EB07300927197 /* Frameworks */,
+				F2C3678A289EB07300927197 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macOS;
+			packageProductDependencies = (
+				F2C3679C289EB0C500927197 /* MultipeerKit */,
+			);
+			productName = "Jacquard Receiver";
+			productReference = F2C3678C289EB07300927197 /* macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,6 +223,9 @@
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					F21CC85728985D6D00C7FEED = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					F2C3678B289EB07300927197 = {
 						CreatedOnToolsVersion = 14.0;
 					};
 				};
@@ -173,7 +247,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F21CC85728985D6D00C7FEED /* Jacquard RTC */,
+				F21CC85728985D6D00C7FEED /* iOS */,
+				F2C3678B289EB07300927197 /* macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +260,15 @@
 			files = (
 				F21CC86428985D6D00C7FEED /* Preview Assets.xcassets in Resources */,
 				F21CC86028985D6D00C7FEED /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2C3678A289EB07300927197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2C36796289EB07300927197 /* Preview Assets.xcassets in Resources */,
+				F2C36793289EB07300927197 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +287,15 @@
 				F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */,
 				F2C36787289EA5B600927197 /* JacquardManager.swift in Sources */,
 				F21CC85C28985D6D00C7FEED /* Jacquard_RTCApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2C36788289EB07300927197 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2C36791289EB07300927197 /* ContentView.swift in Sources */,
+				F2C3678F289EB07300927197 /* Jacquard_ReceiverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +489,70 @@
 			};
 			name = Release;
 		};
+		F2C36799289EB07300927197 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "Jacquard Receiver/Jacquard_Receiver.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Jacquard Receiver/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Q5KKY45ZN;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard Receiver";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-Receiver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F2C3679A289EB07300927197 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "Jacquard Receiver/Jacquard_Receiver.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Jacquard Receiver/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Q5KKY45ZN;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard Receiver";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-Receiver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -408,11 +565,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F21CC86728985D6D00C7FEED /* Build configuration list for PBXNativeTarget "Jacquard RTC" */ = {
+		F21CC86728985D6D00C7FEED /* Build configuration list for PBXNativeTarget "iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F21CC86828985D6D00C7FEED /* Debug */,
 				F21CC86928985D6D00C7FEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2C36798289EB07300927197 /* Build configuration list for PBXNativeTarget "macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2C36799289EB07300927197 /* Debug */,
+				F2C3679A289EB07300927197 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -445,6 +611,11 @@
 			productName = JacquardSDK;
 		};
 		F24B970F289D333C0062727E /* MultipeerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F24B970E289D333C0062727E /* XCRemoteSwiftPackageReference "MultipeerKit" */;
+			productName = MultipeerKit;
+		};
+		F2C3679C289EB0C500927197 /* MultipeerKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F24B970E289D333C0062727E /* XCRemoteSwiftPackageReference "MultipeerKit" */;
 			productName = MultipeerKit;

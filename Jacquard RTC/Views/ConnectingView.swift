@@ -11,61 +11,40 @@ import SwiftUI
 
 struct ConnectingView: View {
   @State private var connectedTag: ConnectedTag? = nil
-  @State private var isPageTransition: Bool = false
+  @State private var lastConnectionStateDescription = "Preparing to connect..."
+  
+  private var tagIdentifier: UUID
+  private var jacquardManager: JacquardManager
 
-  private var connectionStream: AnyPublisher<TagConnectionState, Never>?
-
-  init(manager: JacquardManager, tagId: UUID) {
-    // perform actions to connect to jacquard tag
-    print("tag connect request")
-    print(tagId)
-    print(connectionStream)
-    connectionStream = manager
-      .connect(tagId)
-      .catch { error -> AnyPublisher<TagConnectionState, Never> in
-        // The only error that can happen here is TagConnectionError.bluetoothDeviceNotFound
-        switch error as? TagConnectionError {
-        case .bluetoothDeviceNotFound:
-          assertionFailure("CoreBluetooth couldn't find known tag for identifier \(tagId).")
-          return Just<TagConnectionState>(.disconnected(error)).eraseToAnyPublisher()
-        default:
-          preconditionFailure("Unexpected error: \(error)")
-        }
-      }
-      .eraseToAnyPublisher()
-
-    // monitor connection state
-    print("connectionStream")
-    print(connectionStream)
-
-    let tagOrNilPublisher = connectionStream?.map {
-      [self] state -> ConnectedTag? in
-      print("state update: ")
-      print(state)
-      if case let .connected(tag) = state {
-        print("tag connected")
-        self.connectedTag = tag
-        self.isPageTransition = true
-        return tag
-      }
-      return nil
-    }.removeDuplicates {
-      previousState, currentState in
-      if previousState == nil, currentState == nil {
-        print("duplicates removed")
-        return true
-      }
-      return false
-    }
+  init (manager: JacquardManager, tagId: UUID) {
+    self.tagIdentifier = tagId
+    self.jacquardManager = manager
   }
 
   var body: some View {
     VStack {
-      Text("Connecting...")
-
-//      NavigationLink(destination: ControllerView(
-//        jacquardTag: connectedTag
-//      ), isActive: $isPageTransition) { EmptyView() }
+      if let connectedTag = connectedTag {
+        Text("Connected to \(connectedTag.displayName)")
+      } else {
+        Text(lastConnectionStateDescription)
+      }
+    }.task {
+      do {
+        // attempt tp connect to jacquard tag
+        let connectionStream = jacquardManager.asyncConnect(tagIdentifier)
+        for try await connectionState in connectionStream {
+          print("connection state: \(connectionState)")
+          switch connectionState {
+          case .connected(let tag):
+            connectedTag = tag
+          default:
+            connectedTag = nil
+            lastConnectionStateDescription = "\(connectionState)"
+          }
+        }
+      } catch {
+        print("error during connection: \(error)")
+      }
     }
   }
 }
