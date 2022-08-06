@@ -486,7 +486,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Jacquard-RTC-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard RTC";
+				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard Transmitter";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Using Bluetooth to locate Jacquard tags";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Using local network to broadcast gestures to reciver";
@@ -528,7 +528,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Jacquard-RTC-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard RTC";
+				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard Transmitter";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Using Bluetooth to locate Jacquard tags";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Using local network to broadcast gestures to reciver";
