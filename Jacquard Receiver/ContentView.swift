@@ -60,7 +60,11 @@ struct ContentView: View {
     .frame(width: 400, height: 600)
     .background(.white)
     .task {
+      // start multipeer
       transceiver.resume()
+
+      // observe datasource
+      self.dataSource = MultipeerDataSource(transceiver: transceiver)
       
       transceiver.receive(TransmitterPayload.self) { payload, sender in
         print("recieved \(payload.gesture) from (\(sender.name))[\(sender.id)]")
