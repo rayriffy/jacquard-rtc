@@ -26,60 +26,57 @@ final class ViewModel: ObservableObject {
 
 struct ControllerView: View {
   @ObservedObject private(set) var viewModel = ViewModel()
-  @EnvironmentObject var dataSource: MultipeerDataSource
+  
+  @Binding var jacquardTag: ConnectedTag?
 
-  let transceiver = MultipeerTransceiver()
+  @State private var dataSource: MultipeerDataSource? = nil
+  @State private var observer: Cancellable? = nil
+  @State private var lastGestures: [String] = []
 
-  init(jacquardTag: ConnectedTag?) {
-    print("controller view init")
-    print("jacquardTag")
-    print(jacquardTag)
-    transceiver.resume()
-
-    jacquardTag?.registerSubscriptions { subscribableTag in
-      self.subcribeGestureData(subscribableTag)
-    }
-  }
-
-  private func subcribeGestureData(_ tag: SubscribableTag) {
-    tag
-      .subscribe(GestureNotificationSubscription())
-      .sink {
-        notification in
-        guard let self = self else { return }
-        print("name: \(notification.name), rawValue: \(notification.rawValue), hashValue: \(notification.hashValue)")
-        self.transceiver.broadcast(TransmitterPayload(gesture: notification.name))
-      }
-  }
+  let transceiver = MultipeerTransceiver(configuration: MultipeerConfiguration(
+    serviceType: "JacquardRTC",
+    peerName: "Transmitter - iOS",
+    defaults: .standard,
+    security: .default,
+    invitation: .automatic
+  ))
 
   var body: some View {
     VStack {
-      Text("Ready to transmit")
+      Text("\(dataSource?.availablePeers.count ?? -1) 💻").dynamicTypeSize(.xLarge).bold()
+      Text("Ready to transmit").padding().dynamicTypeSize(.medium)
+      
       List {
-        ForEach(dataSource.availablePeers) { peer in
-          HStack {
-            Circle()
-              .frame(width: 12, height: 12)
-              .foregroundColor(peer.isConnected ? .green : .gray)
-
-            Text(peer.name)
-
-            Spacer()
-
-            if self.viewModel.selectedPeers.contains(peer) {
-              Image(systemName: "checkmark")
-            }
-          }.onTapGesture {
-            self.viewModel.toggle(peer)
+        Section {
+          ForEach(lastGestures.reversed().prefix(8), id: \.self) { lastGesture in
+            Text(lastGesture)
           }
+        } header: {
+          Text("Last Gestures")
         }
+      }
+    }.task {
+      // start multipeer
+      transceiver.resume()
+      
+      // observe datasource
+      self.dataSource = MultipeerDataSource(transceiver: transceiver)
+
+      // register notification
+      jacquardTag?.registerSubscriptions { subscribableTag in
+        print("subscribe")
+        
+        // sink returns cancellable type, need to store somewhere because if it's destroy then it won't be called
+        self.observer = subscribableTag
+          .subscribe(GestureNotificationSubscription())
+          .sink {
+            notification in
+            print("name: \(notification.name), rawValue: \(notification.rawValue), hashValue: \(notification.hashValue)")
+            
+            self.lastGestures.append(notification.name)
+            self.transceiver.broadcast(TransmitterPayload(gesture: notification.name))
+          }
       }
     }
   }
 }
-
-// struct ControllerView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    ControllerView()
-//  }
-// }

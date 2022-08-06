@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import JacquardSDK
 
 struct TransmitterPayload: Codable {
   var gesture: String

@@ -24,7 +24,7 @@ struct ConnectingView: View {
   var body: some View {
     VStack {
       if let connectedTag = connectedTag {
-        Text("Connected to \(connectedTag.displayName)")
+        ControllerView(jacquardTag: $connectedTag)
       } else {
         Text(lastConnectionStateDescription)
       }

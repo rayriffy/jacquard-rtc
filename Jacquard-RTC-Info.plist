@@ -4,7 +4,7 @@
 <dict>
 	<key>NSBonjourServices</key>
 	<array>
-		<string>_JACQUARDRTC._tcp</string>
+		<string>_JacquardRTC._tcp</string>
 	</array>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Using local network to broadcast gestures to reciver</string>

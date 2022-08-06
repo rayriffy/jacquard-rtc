@@ -24,6 +24,11 @@
 		F2C36793289EB07300927197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C36792289EB07300927197 /* Assets.xcassets */; };
 		F2C36796289EB07300927197 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C36795289EB07300927197 /* Preview Assets.xcassets */; };
 		F2C3679D289EB0C500927197 /* MultipeerKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2C3679C289EB0C500927197 /* MultipeerKit */; };
+		F2C3679F289EB97800927197 /* Jacquard-RTC-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */; };
+		F2C367A3289ECE1A00927197 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367A2289ECE1A00927197 /* Cancellable.swift */; };
+		F2C367A5289ECF6E00927197 /* AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367A4289ECF6E00927197 /* AnyCancellable.swift */; };
+		F2C367A7289ED8AC00927197 /* TransmitterPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B9712289D35F50062727E /* TransmitterPayload.swift */; };
+		F2C367B3289EDF2800927197 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = F2C367B2289EDF2800927197 /* ShortcutRecorder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,8 @@
 		F2C36792289EB07300927197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2C36795289EB07300927197 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2C36797289EB07300927197 /* Jacquard_Receiver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_Receiver.entitlements; sourceTree = "<group>"; };
+		F2C367A2289ECE1A00927197 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		F2C367A4289ECF6E00927197 /* AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCancellable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C367B3289EDF2800927197 /* ShortcutRecorder in Frameworks */,
 				F2C3679D289EB0C500927197 /* MultipeerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +80,7 @@
 		F21CC84F28985D6D00C7FEED = {
 			isa = PBXGroup;
 			children = (
+				F2C367A6289ED8A100927197 /* Shared */,
 				F21CC85A28985D6D00C7FEED /* Jacquard RTC */,
 				F2C3678D289EB07300927197 /* Jacquard Receiver */,
 				F21CC85928985D6D00C7FEED /* Products */,
@@ -94,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				F2C36785289EA5AA00927197 /* Extensions */,
-				F24B9711289D35E00062727E /* Codable */,
 				F2B5F5702899537A00115789 /* Views */,
 				F21CC86D28985E2400C7FEED /* Jacquard-RTC-Info.plist */,
 				F21CC85B28985D6D00C7FEED /* Jacquard_RTCApp.swift */,
@@ -137,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				F2C36786289EA5B600927197 /* JacquardManager.swift */,
+				F2C367A2289ECE1A00927197 /* Cancellable.swift */,
+				F2C367A4289ECF6E00927197 /* AnyCancellable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +154,8 @@
 		F2C3678D289EB07300927197 /* Jacquard Receiver */ = {
 			isa = PBXGroup;
 			children = (
+				F2C367AE289EDCBC00927197 /* Extensions */,
+				F2C367A8289EDB2300927197 /* Views */,
 				F2C3678E289EB07300927197 /* Jacquard_ReceiverApp.swift */,
 				F2C36790289EB07300927197 /* ContentView.swift */,
 				F2C36792289EB07300927197 /* Assets.xcassets */,
@@ -166,6 +178,28 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2C367A6289ED8A100927197 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F24B9711289D35E00062727E /* Codable */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F2C367A8289EDB2300927197 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F2C367AE289EDCBC00927197 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +241,7 @@
 			name = macOS;
 			packageProductDependencies = (
 				F2C3679C289EB0C500927197 /* MultipeerKit */,
+				F2C367B2289EDF2800927197 /* ShortcutRecorder */,
 			);
 			productName = "Jacquard Receiver";
 			productReference = F2C3678C289EB07300927197 /* macOS.app */;
@@ -242,6 +277,7 @@
 			packageReferences = (
 				F21CC86A28985DA600C7FEED /* XCRemoteSwiftPackageReference "JacquardSDKiOS" */,
 				F24B970E289D333C0062727E /* XCRemoteSwiftPackageReference "MultipeerKit" */,
+				F2C367B1289EDF2800927197 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
 			);
 			productRefGroup = F21CC85928985D6D00C7FEED /* Products */;
 			projectDirPath = "";
@@ -259,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F21CC86428985D6D00C7FEED /* Preview Assets.xcassets in Resources */,
+				F2C3679F289EB97800927197 /* Jacquard-RTC-Info.plist in Resources */,
 				F21CC86028985D6D00C7FEED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,12 +316,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C367A3289ECE1A00927197 /* Cancellable.swift in Sources */,
 				F24B970D289D2D100062727E /* ControllerView.swift in Sources */,
 				F2B5F574289953A200115789 /* ConnectingView.swift in Sources */,
 				F24B9713289D35F50062727E /* TransmitterPayload.swift in Sources */,
 				F2B5F5762899687100115789 /* PeerConnectionView.swift in Sources */,
 				F21CC85E28985D6D00C7FEED /* ContentView.swift in Sources */,
 				F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */,
+				F2C367A5289ECF6E00927197 /* AnyCancellable.swift in Sources */,
 				F2C36787289EA5B600927197 /* JacquardManager.swift in Sources */,
 				F21CC85C28985D6D00C7FEED /* Jacquard_RTCApp.swift in Sources */,
 			);
@@ -294,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C367A7289ED8AC00927197 /* TransmitterPayload.swift in Sources */,
 				F2C36791289EB07300927197 /* ContentView.swift in Sources */,
 				F2C3678F289EB07300927197 /* Jacquard_ReceiverApp.swift in Sources */,
 			);
@@ -602,6 +642,14 @@
 				minimumVersion = 0.4.0;
 			};
 		};
+		F2C367B1289EDF2800927197 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -619,6 +667,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F24B970E289D333C0062727E /* XCRemoteSwiftPackageReference "MultipeerKit" */;
 			productName = MultipeerKit;
+		};
+		F2C367B2289EDF2800927197 /* ShortcutRecorder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2C367B1289EDF2800927197 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
+			productName = ShortcutRecorder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

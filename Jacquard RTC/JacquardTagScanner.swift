@@ -10,12 +10,6 @@ import CoreBluetooth
 import Foundation
 import JacquardSDK
 
-extension AnyCancellable {
-  func addTo(_ array: inout [AnyCancellable]) {
-    array.append(self)
-  }
-}
-
 class JacquardTagScanner: ObservableObject {
   @Published var preConnectedTags: [PreConnectedTag] = []
   @Published var advertisedTags: [AdvertisedTag] = []
