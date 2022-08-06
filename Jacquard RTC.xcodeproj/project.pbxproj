@@ -29,6 +29,9 @@
 		F2C367A5289ECF6E00927197 /* AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367A4289ECF6E00927197 /* AnyCancellable.swift */; };
 		F2C367A7289ED8AC00927197 /* TransmitterPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B9712289D35F50062727E /* TransmitterPayload.swift */; };
 		F2C367B3289EDF2800927197 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = F2C367B2289EDF2800927197 /* ShortcutRecorder */; };
+		F2C367B5289EE33600927197 /* GestureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367B4289EE33600927197 /* GestureInputView.swift */; };
+		F2C367B8289EEB2A00927197 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367B7289EEB2A00927197 /* KeyboardKey.swift */; };
+		F2C367BA289EF27B00927197 /* KeyboardPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367B9289EF27B00927197 /* KeyboardPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +48,7 @@
 		F2B5F573289953A200115789 /* ConnectingView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2B5F5752899687100115789 /* PeerConnectionView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PeerConnectionView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2C36786289EA5B600927197 /* JacquardManager.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JacquardManager.swift; sourceTree = "<group>"; tabWidth = 2; };
-		F2C3678C289EB07300927197 /* macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2C3678C289EB07300927197 /* Jacquard Receiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jacquard Receiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C3678E289EB07300927197 /* Jacquard_ReceiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jacquard_ReceiverApp.swift; sourceTree = "<group>"; };
 		F2C36790289EB07300927197 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2C36792289EB07300927197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +56,9 @@
 		F2C36797289EB07300927197 /* Jacquard_Receiver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_Receiver.entitlements; sourceTree = "<group>"; };
 		F2C367A2289ECE1A00927197 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		F2C367A4289ECF6E00927197 /* AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCancellable.swift; sourceTree = "<group>"; };
+		F2C367B4289EE33600927197 /* GestureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureInputView.swift; sourceTree = "<group>"; };
+		F2C367B7289EEB2A00927197 /* KeyboardKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
+		F2C367B9289EF27B00927197 /* KeyboardPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F21CC85828985D6D00C7FEED /* iOS.app */,
-				F2C3678C289EB07300927197 /* macOS.app */,
+				F2C3678C289EB07300927197 /* Jacquard Receiver.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 		F2C3678D289EB07300927197 /* Jacquard Receiver */ = {
 			isa = PBXGroup;
 			children = (
+				F2C367B6289EEB1200927197 /* Enumerations */,
 				F2C367AE289EDCBC00927197 /* Extensions */,
 				F2C367A8289EDB2300927197 /* Views */,
 				F2C3678E289EB07300927197 /* Jacquard_ReceiverApp.swift */,
@@ -191,6 +198,8 @@
 		F2C367A8289EDB2300927197 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F2C367B4289EE33600927197 /* GestureInputView.swift */,
+				F2C367B9289EF27B00927197 /* KeyboardPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +209,14 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F2C367B6289EEB1200927197 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				F2C367B7289EEB2A00927197 /* KeyboardKey.swift */,
+			);
+			path = Enumerations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +261,7 @@
 				F2C367B2289EDF2800927197 /* ShortcutRecorder */,
 			);
 			productName = "Jacquard Receiver";
-			productReference = F2C3678C289EB07300927197 /* macOS.app */;
+			productReference = F2C3678C289EB07300927197 /* Jacquard Receiver.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +352,10 @@
 			files = (
 				F2C367A7289ED8AC00927197 /* TransmitterPayload.swift in Sources */,
 				F2C36791289EB07300927197 /* ContentView.swift in Sources */,
+				F2C367BA289EF27B00927197 /* KeyboardPicker.swift in Sources */,
+				F2C367B8289EEB2A00927197 /* KeyboardKey.swift in Sources */,
 				F2C3678F289EB07300927197 /* Jacquard_ReceiverApp.swift in Sources */,
+				F2C367B5289EE33600927197 /* GestureInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,9 +488,12 @@
 				INFOPLIST_FILE = "Jacquard-RTC-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard RTC";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Using Bluetooth to locate Jacquard tags";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Using local network to broadcast gestures to reciver";
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -478,7 +501,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-RTC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-Transmitter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -507,9 +530,12 @@
 				INFOPLIST_FILE = "Jacquard-RTC-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Jacquard RTC";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Using Bluetooth to locate Jacquard tags";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Using local network to broadcast gestures to reciver";
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -517,7 +543,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-RTC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-Transmitter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -554,7 +580,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-Receiver";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Jacquard Receiver";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -586,7 +612,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-Receiver";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Jacquard Receiver";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -6,15 +6,9 @@
 	<array>
 		<string>_JacquardRTC._tcp</string>
 	</array>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>Using local network to broadcast gestures to reciver</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
 	</array>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Using Bluetooth to locate Jacquard tags</string>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>

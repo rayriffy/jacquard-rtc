@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/rayriffy/Git/Jacquard RTC/Jacquard RTC.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
