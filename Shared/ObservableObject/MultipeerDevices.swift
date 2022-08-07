@@ -13,34 +13,31 @@ class MultipeerDevices: ObservableObject {
   @Published var availablePeers: [Peer] = []
 
   @Published var transceiver: MultipeerTransceiver? = nil
+  
+  private var serviceType: String = "JacquardRTC"
+  private var security = MultipeerConfiguration.Security(
+    identity: nil,
+    encryptionPreference: .required,
+    invitationHandler: { _, _, closure in
+      closure(true)
+    }
+  )
 
   init() {
     #if canImport(UIKit)
       self.transceiver = MultipeerTransceiver(configuration: MultipeerConfiguration(
-        serviceType: "JacquardRTC",
+        serviceType: serviceType,
         peerName: UIDevice.current.name,
         defaults: .standard,
-        security: .init(
-          identity: nil,
-          encryptionPreference: .required,
-          invitationHandler: { _, _, closure in
-            closure(true)
-          }
-        ),
+        security: security,
         invitation: .automatic
       ))
     #else
       self.transceiver = MultipeerTransceiver(configuration: MultipeerConfiguration(
-        serviceType: "JacquardRTC",
+        serviceType: serviceType,
         peerName: Host.current().localizedName ?? "Unknown Device",
         defaults: .standard,
-        security: .init(
-          identity: nil,
-          encryptionPreference: .required,
-          invitationHandler: { _, _, closure in
-            closure(true)
-          }
-        ),
+        security: security,
         invitation: .automatic
       ))
     #endif
