@@ -43,7 +43,6 @@
 		F2C367A3289ECE1A00927197 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367A2289ECE1A00927197 /* Cancellable.swift */; };
 		F2C367A5289ECF6E00927197 /* AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367A4289ECF6E00927197 /* AnyCancellable.swift */; };
 		F2C367A7289ED8AC00927197 /* TransmitterPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B9712289D35F50062727E /* TransmitterPayload.swift */; };
-		F2C367B3289EDF2800927197 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = F2C367B2289EDF2800927197 /* ShortcutRecorder */; };
 		F2C367B5289EE33600927197 /* GestureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367B4289EE33600927197 /* GestureInputView.swift */; };
 		F2C367B8289EEB2A00927197 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367B7289EEB2A00927197 /* KeyboardKey.swift */; };
 		F2C367BA289EF27B00927197 /* KeyboardPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C367B9289EF27B00927197 /* KeyboardPicker.swift */; };
@@ -101,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C367B3289EDF2800927197 /* ShortcutRecorder in Frameworks */,
 				F2C3679D289EB0C500927197 /* MultipeerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +317,6 @@
 			name = macOS;
 			packageProductDependencies = (
 				F2C3679C289EB0C500927197 /* MultipeerKit */,
-				F2C367B2289EDF2800927197 /* ShortcutRecorder */,
 			);
 			productName = "Jacquard Receiver";
 			productReference = F2C3678C289EB07300927197 /* Jacquard Receiver.app */;
@@ -355,7 +352,6 @@
 			packageReferences = (
 				F21CC86A28985DA600C7FEED /* XCRemoteSwiftPackageReference "JacquardSDKiOS" */,
 				F24B970E289D333C0062727E /* XCRemoteSwiftPackageReference "MultipeerKit" */,
-				F2C367B1289EDF2800927197 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
 			);
 			productRefGroup = F21CC85928985D6D00C7FEED /* Products */;
 			projectDirPath = "";
@@ -742,14 +738,6 @@
 				minimumVersion = 0.4.0;
 			};
 		};
-		F2C367B1289EDF2800927197 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -767,11 +755,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F24B970E289D333C0062727E /* XCRemoteSwiftPackageReference "MultipeerKit" */;
 			productName = MultipeerKit;
-		};
-		F2C367B2289EDF2800927197 /* ShortcutRecorder */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F2C367B1289EDF2800927197 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
-			productName = ShortcutRecorder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
