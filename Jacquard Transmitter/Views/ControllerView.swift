@@ -11,56 +11,30 @@ import Combine
 import JacquardSDK
 import MultipeerKit
 
-final class ViewModel: ObservableObject {
-  @Published var message: String = ""
-  @Published var selectedPeers: [MultipeerKit.Peer] = []
-
-  func toggle(_ peer: MultipeerKit.Peer) {
-    if selectedPeers.contains(peer) {
-      selectedPeers.remove(at: selectedPeers.firstIndex(of: peer)!)
-    } else {
-      selectedPeers.append(peer)
-    }
-  }
-}
-
 struct ControllerView: View {
-  @ObservedObject private(set) var viewModel = ViewModel()
-  
   @Binding var jacquardTag: ConnectedTag?
+  
+  @StateObject var peerSelector: PeerSelector = PeerSelector()
+  @StateObject var multipeerDevices: MultipeerDevices = MultipeerDevices()
 
-  @State private var dataSource: MultipeerDataSource? = nil
   @State private var observer: Cancellable? = nil
   @State private var lastGestures: [String] = []
 
-  let transceiver = MultipeerTransceiver(configuration: MultipeerConfiguration(
-    serviceType: "JacquardRTC",
-    peerName: "Transmitter - iOS",
-    defaults: .standard,
-    security: .default,
-    invitation: .automatic
-  ))
-
   var body: some View {
     VStack {
-      Text("\(dataSource?.availablePeers.count ?? -1) 💻").dynamicTypeSize(.xLarge).bold()
-      Text("Ready to transmit").padding().dynamicTypeSize(.medium)
+      Text("\(multipeerDevices.availablePeers.count) 💻").font(.system(size: 36)).bold()
+      Text("Ready to transmit").padding(.top).dynamicTypeSize(.medium)
+      Text("Your ID: \(String((multipeerDevices.transceiver!.localPeerId ?? "").prefix(8)))").dynamicTypeSize(.small)
       
-      List {
-        Section {
-          ForEach(lastGestures.reversed().prefix(8), id: \.self) { lastGesture in
-            Text(lastGesture)
-          }
-        } header: {
-          Text("Last Gestures")
-        }
-      }
+      LastGesture(lastGestures: self.$lastGestures)
+
+      MultipeerDevicesView(
+        peerSelector: peerSelector,
+        multipeerDevices: multipeerDevices
+      )
     }.task {
       // start multipeer
-      transceiver.resume()
-      
-      // observe datasource
-      self.dataSource = MultipeerDataSource(transceiver: transceiver)
+      multipeerDevices.transceiver!.resume()
 
       // register notification
       jacquardTag?.registerSubscriptions { subscribableTag in
@@ -74,7 +48,10 @@ struct ControllerView: View {
             print("name: \(notification.name), rawValue: \(notification.rawValue), hashValue: \(notification.hashValue)")
             
             self.lastGestures.append(notification.name)
-            self.transceiver.broadcast(TransmitterPayload(gesture: notification.name))
+            
+            if (!self.peerSelector.selectedPeers.isEmpty) {
+              multipeerDevices.transceiver!.send(TransmitterPayload(gesture: notification.name), to: self.peerSelector.selectedPeers)
+            }
           }
       }
     }

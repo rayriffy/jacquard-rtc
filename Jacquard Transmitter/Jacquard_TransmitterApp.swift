@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MultipeerKit
 
 @main
 struct Jacquard_TransmitterApp: App {

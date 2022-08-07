@@ -9,31 +9,25 @@ import SwiftUI
 import MultipeerKit
 
 struct ContentView: View {
-  @State private var dataSource: MultipeerDataSource? = nil
   @State private var lastGestures: [String] = []
-  @State private var selectedPeers: [Peer] = []
+  
+  @StateObject var peerSelector: PeerSelector = PeerSelector()
+  @StateObject var multipeerDevices: MultipeerDevices = MultipeerDevices()
   
   @StateObject var gestureBrushOut: GestureKeyboard = GestureKeyboard(keyboardKey: KeyboardKey.key_arrowRight)
   @StateObject var gestureBrushIn: GestureKeyboard = GestureKeyboard(keyboardKey: KeyboardKey.key_arrowLeft)
   @StateObject var gestureDoubleTap: GestureKeyboard = GestureKeyboard(keyboardKey: KeyboardKey.key_space)
   @StateObject var gestureCover: GestureKeyboard = GestureKeyboard(keyboardKey: KeyboardKey.key_esc)
 
-  let transceiver = MultipeerTransceiver(configuration: MultipeerConfiguration(
-    serviceType: "JacquardRTC",
-    peerName: "Receiver - macOS",
-    defaults: .standard,
-    security: .default,
-    invitation: .automatic
-  ))
-
   var body: some View {
     VStack {
-      Text("**\(dataSource?.availablePeers.count ?? -1) 💻**")
+      Text("**\(multipeerDevices.availablePeers.count) 💻**")
         .font(.system(size: 32))
         .padding(.top, 14)
       Text("Ready to receive")
-        .padding()
+        .padding(.top)
         .dynamicTypeSize(.medium)
+      Text("Your ID: \(String((multipeerDevices.transceiver!.localPeerId ?? "").prefix(8)))").dynamicTypeSize(.small)
       
       Form {
         SettingPanelView(label: "Brush Out", gestureKeyboard: gestureBrushOut)
@@ -42,75 +36,46 @@ struct ContentView: View {
         SettingPanelView(label: "Cover", gestureKeyboard: gestureCover)
       }
       
-      List {
-        Section {
-//          ForEach((1...11).reversed(), id: \.self) {
-//            Text("Gesture \($0)")
-//          }
-          ForEach(lastGestures.reversed().prefix(11), id: \.self) { lastGesture in
-            Text(lastGesture)
-          }
-        } header: {
-          Text("Last Gesture")
-        }
-      }
-      List {
-        ForEach(dataSource?.availablePeers) { peer in
-          HStack {
-            Circle()
-              .frame(width: 12, height: 12)
-              .foregroundColor(peer.isConnected ? .green : .gray)
-
-            Text(peer.name)
-
-            Spacer()
-
-            if self.viewModel.selectedPeers.contains(peer) {
-              Image(systemName: "checkmark")
-            }
-          }.onTapGesture {
-            self.viewModel.toggle(peer)
-          }
-        }
-      }
+      
+      MultipeerDevicesView(
+        peerSelector: peerSelector,
+        multipeerDevices: multipeerDevices
+      )
+      
+      LastGesture(lastGestures: self.$lastGestures)
     }
     .padding(20)
-    .frame(width: 400, height: 600)
+    .frame(width: 400, height: 630)
     .background(VisualEffect().ignoresSafeArea())
     .task {
       // start multipeer
-      transceiver.resume()
-
-      // observe datasource
-      self.dataSource = MultipeerDataSource(transceiver: transceiver)
+      multipeerDevices.transceiver!.resume()
       
-      transceiver.receive(TransmitterPayload.self) { payload, sender in
-        print("recieved \(payload.gesture) from (\(sender.name))[\(sender.id)]")
-        self.lastGestures.append(payload.gesture)
+      multipeerDevices.transceiver!.receive(TransmitterPayload.self) { payload, sender in
+        // only recieve gesture from authorized device
+        let selectedPeerIds = self.peerSelector.selectedPeers.map { $0.id }
 
-        switch (payload.gesture) {
-        case "Brush Out":
-          gestureBrushOut.execute()
-          break
-        case "Brush In":
-          gestureBrushIn.execute()
-          break
-        case "Double Tap":
-          gestureDoubleTap.execute()
-          break
-        case "Cover":
-          gestureCover.execute()
-          break
-        default:
-          break
+        if (selectedPeerIds.contains(sender.id)) {
+          self.lastGestures.append(payload.gesture)
+
+          switch (payload.gesture) {
+          case "Brush Out":
+            gestureBrushOut.execute()
+            break
+          case "Brush In":
+            gestureBrushIn.execute()
+            break
+          case "Double Tap":
+            gestureDoubleTap.execute()
+            break
+          case "Cover":
+            gestureCover.execute()
+            break
+          default:
+            break
+          }
         }
       }
     }
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
   }
 }

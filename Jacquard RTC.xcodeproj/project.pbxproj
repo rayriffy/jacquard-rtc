@@ -20,6 +20,16 @@
 		F2841CC6289F43A200A054E2 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CC4289F436C00A054E2 /* VisualEffect.swift */; };
 		F2841CC8289F43C500A054E2 /* TransparentWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CC7289F43C500A054E2 /* TransparentWindow.swift */; };
 		F2841CCA289FC9CC00A054E2 /* PeerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CC9289FC9CC00A054E2 /* PeerSelector.swift */; };
+		F2841CCC289FCC9C00A054E2 /* PeerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CC9289FC9CC00A054E2 /* PeerSelector.swift */; };
+		F2841CCE289FD00900A054E2 /* MessagePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CCD289FD00900A054E2 /* MessagePayload.swift */; };
+		F2841CD1289FD32A00A054E2 /* PeerToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD0289FD32A00A054E2 /* PeerToggle.swift */; };
+		F2841CD2289FD32A00A054E2 /* PeerToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD0289FD32A00A054E2 /* PeerToggle.swift */; };
+		F2841CD4289FDA9200A054E2 /* LastGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD3289FDA9200A054E2 /* LastGesture.swift */; };
+		F2841CD5289FDA9200A054E2 /* LastGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD3289FDA9200A054E2 /* LastGesture.swift */; };
+		F2841CD7289FDBE100A054E2 /* MultipeerDevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD6289FDBE100A054E2 /* MultipeerDevicesView.swift */; };
+		F2841CD8289FDBE100A054E2 /* MultipeerDevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD6289FDBE100A054E2 /* MultipeerDevicesView.swift */; };
+		F2841CDA289FDCD700A054E2 /* MultipeerDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */; };
+		F2841CDB289FDCD700A054E2 /* MultipeerDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */; };
 		F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */; };
 		F2B5F574289953A200115789 /* ConnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F573289953A200115789 /* ConnectingView.swift */; };
 		F2B5F5762899687100115789 /* PeerConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F5752899687100115789 /* PeerConnectionView.swift */; };
@@ -53,6 +63,11 @@
 		F2841CC4289F436C00A054E2 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		F2841CC7289F43C500A054E2 /* TransparentWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentWindow.swift; sourceTree = "<group>"; };
 		F2841CC9289FC9CC00A054E2 /* PeerSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerSelector.swift; sourceTree = "<group>"; };
+		F2841CCD289FD00900A054E2 /* MessagePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePayload.swift; sourceTree = "<group>"; };
+		F2841CD0289FD32A00A054E2 /* PeerToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerToggle.swift; sourceTree = "<group>"; };
+		F2841CD3289FDA9200A054E2 /* LastGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastGesture.swift; sourceTree = "<group>"; };
+		F2841CD6289FDBE100A054E2 /* MultipeerDevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDevicesView.swift; sourceTree = "<group>"; };
+		F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDevices.swift; sourceTree = "<group>"; };
 		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2B5F573289953A200115789 /* ConnectingView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2B5F5752899687100115789 /* PeerConnectionView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PeerConnectionView.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -142,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				F24B9712289D35F50062727E /* TransmitterPayload.swift */,
+				F2841CCD289FD00900A054E2 /* MessagePayload.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -150,9 +166,27 @@
 			isa = PBXGroup;
 			children = (
 				F2841CBE289F250500A054E2 /* GestureKeyboard.swift */,
-				F2841CC9289FC9CC00A054E2 /* PeerSelector.swift */,
 			);
 			path = ObservableObject;
+			sourceTree = "<group>";
+		};
+		F2841CCB289FCC9600A054E2 /* ObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				F2841CC9289FC9CC00A054E2 /* PeerSelector.swift */,
+				F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */,
+			);
+			path = ObservableObject;
+			sourceTree = "<group>";
+		};
+		F2841CCF289FD31A00A054E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2841CD0289FD32A00A054E2 /* PeerToggle.swift */,
+				F2841CD3289FDA9200A054E2 /* LastGesture.swift */,
+				F2841CD6289FDBE100A054E2 /* MultipeerDevicesView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F2B5F5702899537A00115789 /* Views */ = {
@@ -209,6 +243,8 @@
 		F2C367A6289ED8A100927197 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F2841CCF289FD31A00A054E2 /* View */,
+				F2841CCB289FCC9600A054E2 /* ObservableObject */,
 				F24B9711289D35E00062727E /* Codable */,
 			);
 			path = Shared;
@@ -354,10 +390,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2841CCC289FCC9C00A054E2 /* PeerSelector.swift in Sources */,
+				F2841CD1289FD32A00A054E2 /* PeerToggle.swift in Sources */,
 				F2C367A3289ECE1A00927197 /* Cancellable.swift in Sources */,
 				F24B970D289D2D100062727E /* ControllerView.swift in Sources */,
 				F2B5F574289953A200115789 /* ConnectingView.swift in Sources */,
+				F2841CDA289FDCD700A054E2 /* MultipeerDevices.swift in Sources */,
+				F2841CD7289FDBE100A054E2 /* MultipeerDevicesView.swift in Sources */,
 				F24B9713289D35F50062727E /* TransmitterPayload.swift in Sources */,
+				F2841CD4289FDA9200A054E2 /* LastGesture.swift in Sources */,
 				F2B5F5762899687100115789 /* PeerConnectionView.swift in Sources */,
 				F21CC85E28985D6D00C7FEED /* ContentView.swift in Sources */,
 				F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */,
@@ -376,11 +417,16 @@
 				F2841CBF289F250500A054E2 /* GestureKeyboard.swift in Sources */,
 				F2841CC3289F2A4900A054E2 /* SettingPanelView.swift in Sources */,
 				F2C36791289EB07300927197 /* ContentView.swift in Sources */,
+				F2841CD8289FDBE100A054E2 /* MultipeerDevicesView.swift in Sources */,
+				F2841CD2289FD32A00A054E2 /* PeerToggle.swift in Sources */,
 				F2C367BA289EF27B00927197 /* KeyboardPicker.swift in Sources */,
+				F2841CD5289FDA9200A054E2 /* LastGesture.swift in Sources */,
 				F2C367B8289EEB2A00927197 /* KeyboardKey.swift in Sources */,
 				F2841CC6289F43A200A054E2 /* VisualEffect.swift in Sources */,
+				F2841CDB289FDCD700A054E2 /* MultipeerDevices.swift in Sources */,
 				F2C3678F289EB07300927197 /* Jacquard_ReceiverApp.swift in Sources */,
 				F2841CC8289F43C500A054E2 /* TransparentWindow.swift in Sources */,
+				F2841CCE289FD00900A054E2 /* MessagePayload.swift in Sources */,
 				F2C367B5289EE33600927197 /* GestureInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,7 +571,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-Transmitter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -566,7 +612,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rayriffy.Jacquard-Transmitter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
