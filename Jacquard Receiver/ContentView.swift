@@ -11,11 +11,12 @@ import MultipeerKit
 struct ContentView: View {
   @State private var dataSource: MultipeerDataSource? = nil
   @State private var lastGestures: [String] = []
-
-  @State private var gestureBrushOutKey: KeyboardKey = KeyboardKey.key_arrowRight
-  @State private var gestureBrushInKey: KeyboardKey = KeyboardKey.key_arrowLeft
-  @State private var gestureDoubleTapKey: KeyboardKey = KeyboardKey.key_space
-  @State private var gestureCoverKey: KeyboardKey = KeyboardKey.key_esc
+  @State private var selectedPeers: [Peer] = []
+  
+  @StateObject var gestureBrushOut: GestureKeyboard = GestureKeyboard(keyboardKey: KeyboardKey.key_arrowRight)
+  @StateObject var gestureBrushIn: GestureKeyboard = GestureKeyboard(keyboardKey: KeyboardKey.key_arrowLeft)
+  @StateObject var gestureDoubleTap: GestureKeyboard = GestureKeyboard(keyboardKey: KeyboardKey.key_space)
+  @StateObject var gestureCover: GestureKeyboard = GestureKeyboard(keyboardKey: KeyboardKey.key_esc)
 
   let transceiver = MultipeerTransceiver(configuration: MultipeerConfiguration(
     serviceType: "JacquardRTC",
@@ -25,40 +26,57 @@ struct ContentView: View {
     invitation: .automatic
   ))
 
-  func pressKeyboard(key: KeyboardKey) {
-    let keyCode: UInt16 = key.rawValue
-    let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)
-    keyDownEvent?.post(tap: CGEventTapLocation.cghidEventTap)
-
-    let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
-    keyUpEvent?.post(tap: CGEventTapLocation.cghidEventTap)
-  }
-
   var body: some View {
     VStack {
-      Text("**\(dataSource?.availablePeers.count ?? -1) 💻**").font(.system(size: 32))
-      Text("Ready to receive").padding().dynamicTypeSize(.medium)
+      Text("**\(dataSource?.availablePeers.count ?? -1) 💻**")
+        .font(.system(size: 32))
+        .padding(.top, 14)
+      Text("Ready to receive")
+        .padding()
+        .dynamicTypeSize(.medium)
       
       Form {
-        KeyboardPicker(label: "Brush Out", selection: $gestureBrushOutKey)
-        KeyboardPicker(label: "Brush In", selection: $gestureBrushInKey)
-        KeyboardPicker(label: "Double Tap", selection: $gestureDoubleTapKey)
-        KeyboardPicker(label: "Cover", selection: $gestureCoverKey)
+        SettingPanelView(label: "Brush Out", gestureKeyboard: gestureBrushOut)
+        SettingPanelView(label: "Brush In", gestureKeyboard: gestureBrushIn)
+        SettingPanelView(label: "Double Tap", gestureKeyboard: gestureDoubleTap)
+        SettingPanelView(label: "Cover", gestureKeyboard: gestureCover)
       }
       
       List {
         Section {
-          ForEach(lastGestures.reversed().prefix(12), id: \.self) { lastGesture in
+//          ForEach((1...11).reversed(), id: \.self) {
+//            Text("Gesture \($0)")
+//          }
+          ForEach(lastGestures.reversed().prefix(11), id: \.self) { lastGesture in
             Text(lastGesture)
           }
         } header: {
           Text("Last Gesture")
         }
       }
+      List {
+        ForEach(dataSource?.availablePeers) { peer in
+          HStack {
+            Circle()
+              .frame(width: 12, height: 12)
+              .foregroundColor(peer.isConnected ? .green : .gray)
+
+            Text(peer.name)
+
+            Spacer()
+
+            if self.viewModel.selectedPeers.contains(peer) {
+              Image(systemName: "checkmark")
+            }
+          }.onTapGesture {
+            self.viewModel.toggle(peer)
+          }
+        }
+      }
     }
     .padding(20)
     .frame(width: 400, height: 600)
-    .background(.white)
+    .background(VisualEffect().ignoresSafeArea())
     .task {
       // start multipeer
       transceiver.resume()
@@ -72,16 +90,16 @@ struct ContentView: View {
 
         switch (payload.gesture) {
         case "Brush Out":
-          pressKeyboard(key: gestureBrushOutKey)
+          gestureBrushOut.execute()
           break
         case "Brush In":
-          pressKeyboard(key: gestureBrushInKey)
+          gestureBrushIn.execute()
           break
         case "Double Tap":
-          pressKeyboard(key: gestureDoubleTapKey)
+          gestureDoubleTap.execute()
           break
         case "Cover":
-          pressKeyboard(key: gestureCoverKey)
+          gestureCover.execute()
           break
         default:
           break

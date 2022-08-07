@@ -13,5 +13,6 @@ struct Jacquard_ReceiverApp: App {
     WindowGroup {
       ContentView()
     }
+    .windowStyle(.hiddenTitleBar)
   }
 }
