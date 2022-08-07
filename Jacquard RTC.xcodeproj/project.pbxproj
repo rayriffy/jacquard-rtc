@@ -30,6 +30,7 @@
 		F2841CD8289FDBE100A054E2 /* MultipeerDevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD6289FDBE100A054E2 /* MultipeerDevicesView.swift */; };
 		F2841CDA289FDCD700A054E2 /* MultipeerDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */; };
 		F2841CDB289FDCD700A054E2 /* MultipeerDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */; };
+		F2841CDD289FF49E00A054E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CDC289FF49E00A054E2 /* AppDelegate.swift */; };
 		F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */; };
 		F2B5F574289953A200115789 /* ConnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F573289953A200115789 /* ConnectingView.swift */; };
 		F2B5F5762899687100115789 /* PeerConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F5752899687100115789 /* PeerConnectionView.swift */; };
@@ -68,6 +69,7 @@
 		F2841CD3289FDA9200A054E2 /* LastGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastGesture.swift; sourceTree = "<group>"; };
 		F2841CD6289FDBE100A054E2 /* MultipeerDevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDevicesView.swift; sourceTree = "<group>"; };
 		F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDevices.swift; sourceTree = "<group>"; };
+		F2841CDC289FF49E00A054E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2B5F573289953A200115789 /* ConnectingView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2B5F5752899687100115789 /* PeerConnectionView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PeerConnectionView.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -265,6 +267,7 @@
 			children = (
 				F2841CC4289F436C00A054E2 /* VisualEffect.swift */,
 				F2841CC7289F43C500A054E2 /* TransparentWindow.swift */,
+				F2841CDC289FF49E00A054E2 /* AppDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				F2C3678F289EB07300927197 /* Jacquard_ReceiverApp.swift in Sources */,
 				F2841CC8289F43C500A054E2 /* TransparentWindow.swift in Sources */,
 				F2841CCE289FD00900A054E2 /* MessagePayload.swift in Sources */,
+				F2841CDD289FF49E00A054E2 /* AppDelegate.swift in Sources */,
 				F2C367B5289EE33600927197 /* GestureInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
