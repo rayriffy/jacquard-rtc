@@ -20,7 +20,13 @@ class MultipeerDevices: ObservableObject {
         serviceType: "JacquardRTC",
         peerName: UIDevice.current.name,
         defaults: .standard,
-        security: .default,
+        security: .init(
+          identity: nil,
+          encryptionPreference: .required,
+          invitationHandler: { _, _, closure in
+            closure(true)
+          }
+        ),
         invitation: .automatic
       ))
     #else
@@ -28,7 +34,13 @@ class MultipeerDevices: ObservableObject {
         serviceType: "JacquardRTC",
         peerName: Host.current().localizedName ?? "Unknown Device",
         defaults: .standard,
-        security: .default,
+        security: .init(
+          identity: nil,
+          encryptionPreference: .required,
+          invitationHandler: { _, _, closure in
+            closure(true)
+          }
+        ),
         invitation: .automatic
       ))
     #endif
