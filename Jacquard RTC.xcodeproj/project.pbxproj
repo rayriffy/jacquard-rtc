@@ -243,6 +243,7 @@
 		F2C367A6289ED8A100927197 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F2DDD64A28A0216600E1F35B /* Extensions */,
 				F2841CCF289FD31A00A054E2 /* View */,
 				F2841CCB289FCC9600A054E2 /* ObservableObject */,
 				F24B9711289D35E00062727E /* Codable */,
@@ -276,6 +277,13 @@
 				F2C367B7289EEB2A00927197 /* KeyboardKey.swift */,
 			);
 			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		F2DDD64A28A0216600E1F35B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -14,12 +14,11 @@ struct LastGesture: View {
   var body: some View {
     List {
       Section {
-//        ForEach(Array(lastGestures.reversed().prefix(prefixAmount).enumerated()), id: \.offset) { index, lastGesture in
         ForEach(Array(lastGestures.reversed().enumerated()), id: \.offset) { index, lastGesture in
           HStack {
             Text(lastGesture)
             Spacer()
-            Text("#\(lastGestures.count - index)")
+            Text("**#\(lastGestures.count - index)**")
           }
         }
       } header: {

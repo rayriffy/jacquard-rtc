@@ -27,7 +27,8 @@ struct ContentView: View {
       Text("Ready to receive")
         .padding(.top)
         .dynamicTypeSize(.medium)
-      Text("Your ID: \(String((multipeerDevices.transceiver!.localPeerId ?? "").prefix(8)))").dynamicTypeSize(.small)
+      Text("Device ID: `\(String((multipeerDevices.transceiver!.localPeerId ?? "").prefix(8)))`")
+        .dynamicTypeSize(.small)
       
       Form {
         SettingPanelView(label: "Brush Out", gestureKeyboard: gestureBrushOut)
@@ -47,6 +48,10 @@ struct ContentView: View {
     .padding(20)
     .frame(width: 400, height: 630)
     .background(VisualEffect().ignoresSafeArea())
+    .onDisappear {
+      // stop broadcasting before view disappear
+      multipeerDevices.transceiver?.stop()
+    }
     .task {
       // start multipeer
       multipeerDevices.transceiver!.resume()

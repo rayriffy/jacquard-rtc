@@ -44,7 +44,7 @@ struct MultipeerDevicesView: View {
               arrowEdge: .bottom,
               content: {
                 HStack {
-                  Toggle("Show manually injected peers", isOn: self.$isInjectedPeerEnabled)
+                  Toggle("Show manually injected peers (UNSTABLE)", isOn: self.$isInjectedPeerEnabled)
                 }.padding(12)
               }
             )

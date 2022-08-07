@@ -18,7 +18,7 @@ struct PeerToggle: View {
         .frame(width: 12, height: 12)
         .foregroundColor(peer.isConnected ? .green : .gray)
       
-      Text("\(peer.name) (\(String(peer.id.prefix(8))))")
+      Text("\(peer.name) (`\(String(peer.id.prefix(8)))`)")
       
       Spacer()
       

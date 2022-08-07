@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 import Combine
 import JacquardSDK
 import MultipeerKit
@@ -22,9 +21,10 @@ struct ControllerView: View {
 
   var body: some View {
     VStack {
-      Text("\(multipeerDevices.availablePeers.count) 💻").font(.system(size: 36)).bold()
+      Text("**\(multipeerDevices.availablePeers.count) 💻**")
+        .font(.system(size: 36))
       Text("Ready to transmit").padding(.top).dynamicTypeSize(.medium)
-      Text("Your ID: \(String((multipeerDevices.transceiver!.localPeerId ?? "").prefix(8)))").dynamicTypeSize(.small)
+      Text("Device ID: `\(String((multipeerDevices.transceiver!.localPeerId ?? "").prefix(8)))`").dynamicTypeSize(.small).padding(.bottom, 4)
       
       LastGesture(lastGestures: self.$lastGestures)
 
@@ -32,7 +32,12 @@ struct ControllerView: View {
         peerSelector: peerSelector,
         multipeerDevices: multipeerDevices
       )
-    }.task {
+    }
+    .onDisappear {
+      // stop broadcasting before view disappear
+      multipeerDevices.transceiver?.stop()
+    }
+    .task {
       // start multipeer
       multipeerDevices.transceiver!.resume()
 
