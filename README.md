@@ -1,9 +1,10 @@
 Jacquard RTC
 ===
 
-Real-time communication application for Jacquard to macOS
+Real-time communication application form Google Jacquard tag to macOS
 
 ![](./images/draft.jpg)
+
 Abstract
 ---
 
@@ -12,6 +13,21 @@ Want to use your Google Jacquard equipped jacket with your Mac? Now you can send
 For an example, you can brush in-out from your jacket to press an arrow key on your Mac in order to control your presentation.
 
 This project is built with via [Bonjour](https://developer.apple.com/bonjour/) in mind, that means this project is communicate between iPhone, and Mac in peer-to-peer protocol. No need for centralized server!
+
+Feature
+---
+
+- Zero configuration
+- Peer-to-peer communication with [Bonjour](https://developer.apple.com/bonjour/)
+- Modifier keys support (i.e. `⌘ + ⇧ + T`)
+- No need to disconnect product from [Jacquard™ by Google](https://apps.apple.com/us/app/jacquard-by-google/id1204971157) app
+
+Compatible products
+---
+
+- [Levi’s Trucker Jacket](https://atap.google.com/jacquard/products/levi-trucker/)
+- [Samsonite Konnect-i backpack](https://atap.google.com/jacquard/products/samsonite-konnect-i/)
+- [Saint Laurent Cit-e Backpack](https://atap.google.com/jacquard/products/ysl/)
 
 What's included?
 ---
@@ -49,7 +65,7 @@ There's an *.ipa* and *.app* provided in [Release](https://github.com/rayriffy/j
 How to use it?
 ---
 
-1. Make sure that both Transmitter (iOS), and Reciever (macOS) are located withing the same local network. (This is required for Bonjour)
+1. Make sure that both Transmitter (iOS), and Reciever (macOS) are located withing the same local network for lower latency.
 2. Connect your Jacquard tag to Transmitter
 3. Launch Reciever application, configure keystroke to use on each gesture.
 
