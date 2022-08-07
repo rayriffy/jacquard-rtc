@@ -16,9 +16,28 @@ This project is built with via [Bonjour](https://developer.apple.com/bonjour/) i
 What's included?
 ---
 
-| Jacquard Transmitter | Jacquard Receiver | 
-| -- | -- |
-| ![](./images/transmitter.jpg) Requiements: **iOS 16.0+**<br /> An iPhone application to foward gestures from Jacquard tag to your Mac  |  ![](./images/receiver.jpg) Requirements: **macOS 12.4+**<br /> A macOS application to recieve Jacquard gesture, and configure keystorke to press |
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="50%">Jacquard Transmitter</th>
+      <th width="50%">Jacquard Receiver</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="./images/transmitter.jpg" />
+        <p>Requirements: <b>iOS 16.0+</b></p>
+        <p>An iPhone application to foward gestures from Jacquard tag to your Mac</p>
+      </td>
+      <td>
+        <img src="./images/receiver.jpg" />
+        <p>Requirements: <b>macOS 12.4+</b></p>
+        <p>A macOS application to recieve Jacquard gesture, and configure keystorke to press</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 How to get it?
 ---
