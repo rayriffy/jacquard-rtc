@@ -16,18 +16,26 @@ struct ControllerView: View {
   @StateObject var peerSelector: PeerSelector = PeerSelector()
   @StateObject var multipeerDevices: MultipeerDevices = MultipeerDevices()
 
-  @State private var observer: Cancellable? = nil
+  @State private var observers: [Cancellable] = []
   @State private var lastGestures: [String] = []
 
   var body: some View {
     VStack {
-      Text("**\(multipeerDevices.availablePeers.count) 💻**")
-        .font(.system(size: 36))
-      Text("Ready to transmit").padding(.top).dynamicTypeSize(.medium)
-      Text("Device ID: `\(String((multipeerDevices.transceiver!.localPeerId ?? "").prefix(8)))`").dynamicTypeSize(.small).padding(.bottom, 4)
+      ZStack {
+        VStack {
+          Text("**\(multipeerDevices.availablePeers.count) 💻**")
+            .font(.system(size: 36))
+          Text("Ready to transmit").padding(.top).dynamicTypeSize(.medium)
+          Text("Device ID: `\(String((multipeerDevices.transceiver!.localPeerId ?? "").prefix(8)))`")
+            .dynamicTypeSize(.small)
+            .padding(.bottom, 4)
+        }
+        
+        BatteryIndicator(jacquardTag: self.$jacquardTag, observers: self.$observers)
+      }
       
       LastGesture(lastGestures: self.$lastGestures)
-
+      
       MultipeerDevicesView(
         peerSelector: peerSelector,
         multipeerDevices: multipeerDevices
@@ -43,10 +51,8 @@ struct ControllerView: View {
 
       // register notification
       jacquardTag?.registerSubscriptions { subscribableTag in
-        print("subscribe")
-        
         // sink returns cancellable type, need to store somewhere because if it's destroy then it won't be called
-        self.observer = subscribableTag
+        let gestureNotification = subscribableTag
           .subscribe(GestureNotificationSubscription())
           .sink {
             notification in
@@ -58,6 +64,8 @@ struct ControllerView: View {
               multipeerDevices.transceiver!.send(TransmitterPayload(gesture: notification.name), to: self.peerSelector.selectedPeers)
             }
           }
+        
+        self.observers.append(gestureNotification)
       }
     }
   }
