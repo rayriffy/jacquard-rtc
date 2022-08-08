@@ -27,10 +27,10 @@ struct SettingPanelView: View {
         arrowEdge: .bottom,
         content: {
           HStack {
-            Toggle("⌘", isOn: $gestureKeyboard.modifierCommand).toggleStyle(.button)
-            Toggle("⇧", isOn: $gestureKeyboard.modifierShift).toggleStyle(.button)
-            Toggle("⌥", isOn: $gestureKeyboard.modifierOption).toggleStyle(.button)
             Toggle("^", isOn: $gestureKeyboard.modifierControl).toggleStyle(.button)
+            Toggle("⌥", isOn: $gestureKeyboard.modifierOption).toggleStyle(.button)
+            Toggle("⇧", isOn: $gestureKeyboard.modifierShift).toggleStyle(.button)
+            Toggle("⌘", isOn: $gestureKeyboard.modifierCommand).toggleStyle(.button)
           }.padding()
         }
       )
