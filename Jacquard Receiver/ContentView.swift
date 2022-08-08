@@ -31,10 +31,14 @@ struct ContentView: View {
         .dynamicTypeSize(.small)
       
       Form {
-        SettingPanelView(label: "Brush Out", gestureKeyboard: gestureBrushOut)
-        SettingPanelView(label: "Brush In", gestureKeyboard: gestureBrushIn)
-        SettingPanelView(label: "Double Tap", gestureKeyboard: gestureDoubleTap)
-        SettingPanelView(label: "Cover", gestureKeyboard: gestureCover)
+        SettingPanelView(label: "Brush Out")
+          .environmentObject(gestureBrushOut)
+        SettingPanelView(label: "Brush In")
+          .environmentObject(gestureBrushIn)
+        SettingPanelView(label: "Double Tap")
+          .environmentObject(gestureDoubleTap)
+        SettingPanelView(label: "Cover")
+          .environmentObject(gestureCover)
       }
       
       

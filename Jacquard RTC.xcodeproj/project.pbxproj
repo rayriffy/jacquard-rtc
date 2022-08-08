@@ -32,6 +32,8 @@
 		F2841CDB289FDCD700A054E2 /* MultipeerDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */; };
 		F2841CDD289FF49E00A054E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2841CDC289FF49E00A054E2 /* AppDelegate.swift */; };
 		F29215FE28A1696F00961AAF /* BatteryIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29215FD28A1696F00961AAF /* BatteryIndicator.swift */; };
+		F292160028A16CBE00961AAF /* KeyOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29215FF28A16CBE00961AAF /* KeyOption.swift */; };
+		F292160628A170F600961AAF /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F292160528A170F600961AAF /* Algorithms */; };
 		F2AC66EC28987925008DF596 /* JacquardTagScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */; };
 		F2B5F574289953A200115789 /* ConnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F573289953A200115789 /* ConnectingView.swift */; };
 		F2B5F5762899687100115789 /* PeerConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5F5752899687100115789 /* PeerConnectionView.swift */; };
@@ -71,6 +73,7 @@
 		F2841CD9289FDCD700A054E2 /* MultipeerDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerDevices.swift; sourceTree = "<group>"; };
 		F2841CDC289FF49E00A054E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29215FD28A1696F00961AAF /* BatteryIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryIndicator.swift; sourceTree = "<group>"; };
+		F29215FF28A16CBE00961AAF /* KeyOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyOption.swift; sourceTree = "<group>"; };
 		F2AC66EB28987925008DF596 /* JacquardTagScanner.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JacquardTagScanner.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2B5F573289953A200115789 /* ConnectingView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConnectingView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2B5F5752899687100115789 /* PeerConnectionView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PeerConnectionView.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -102,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F292160628A170F600961AAF /* Algorithms in Frameworks */,
 				F2C3679D289EB0C500927197 /* MultipeerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +264,7 @@
 				F2C367B4289EE33600927197 /* GestureInputView.swift */,
 				F2C367B9289EF27B00927197 /* KeyboardPicker.swift */,
 				F2841CC2289F2A4900A054E2 /* SettingPanelView.swift */,
+				F29215FF28A16CBE00961AAF /* KeyOption.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			name = macOS;
 			packageProductDependencies = (
 				F2C3679C289EB0C500927197 /* MultipeerKit */,
+				F292160528A170F600961AAF /* Algorithms */,
 			);
 			productName = "Jacquard Receiver";
 			productReference = F2C3678C289EB07300927197 /* Jacquard Receiver.app */;
@@ -363,6 +369,7 @@
 			packageReferences = (
 				F21CC86A28985DA600C7FEED /* XCRemoteSwiftPackageReference "JacquardSDKiOS" */,
 				F24B970E289D333C0062727E /* XCRemoteSwiftPackageReference "MultipeerKit" */,
+				F292160428A170F600961AAF /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = F21CC85928985D6D00C7FEED /* Products */;
 			projectDirPath = "";
@@ -435,6 +442,7 @@
 				F2C367B8289EEB2A00927197 /* KeyboardKey.swift in Sources */,
 				F2841CC6289F43A200A054E2 /* VisualEffect.swift in Sources */,
 				F2841CDB289FDCD700A054E2 /* MultipeerDevices.swift in Sources */,
+				F292160028A16CBE00961AAF /* KeyOption.swift in Sources */,
 				F2C3678F289EB07300927197 /* Jacquard_ReceiverApp.swift in Sources */,
 				F2841CC8289F43C500A054E2 /* TransparentWindow.swift in Sources */,
 				F2841CCE289FD00900A054E2 /* MessagePayload.swift in Sources */,
@@ -750,6 +758,14 @@
 				minimumVersion = 0.4.0;
 			};
 		};
+		F292160428A170F600961AAF /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -762,6 +778,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F24B970E289D333C0062727E /* XCRemoteSwiftPackageReference "MultipeerKit" */;
 			productName = MultipeerKit;
+		};
+		F292160528A170F600961AAF /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F292160428A170F600961AAF /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
 		};
 		F2C3679C289EB0C500927197 /* MultipeerKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -9,98 +9,98 @@ import SwiftUI
 
 struct KeyboardPicker: View {
   var label: String
-  @Binding var selection: KeyboardKey
+  @ObservedObject var gestureKeyboard: GestureKeyboard
 
   var body: some View {
     Picker(
-      selection: $selection,
+      selection: $gestureKeyboard.keyboardKey,
       label: Text(label),
       content: {
         Group {
-          Text("A").tag(KeyboardKey.key_a)
-          Text("B").tag(KeyboardKey.key_b)
-          Text("C").tag(KeyboardKey.key_c)
-          Text("D").tag(KeyboardKey.key_d)
-          Text("E").tag(KeyboardKey.key_e)
-          Text("F").tag(KeyboardKey.key_f)
-          Text("G").tag(KeyboardKey.key_g)
-          Text("H").tag(KeyboardKey.key_h)
-          Text("I").tag(KeyboardKey.key_i)
-          Text("J").tag(KeyboardKey.key_j)
+          KeyOption(label: "A", value: KeyboardKey.key_a)
+          KeyOption(label: "B", value: KeyboardKey.key_b)
+          KeyOption(label: "C", value: KeyboardKey.key_c)
+          KeyOption(label: "D", value: KeyboardKey.key_d)
+          KeyOption(label: "E", value: KeyboardKey.key_e)
+          KeyOption(label: "F", value: KeyboardKey.key_f)
+          KeyOption(label: "G", value: KeyboardKey.key_g)
+          KeyOption(label: "H", value: KeyboardKey.key_h)
+          KeyOption(label: "I", value: KeyboardKey.key_i)
+          KeyOption(label: "J", value: KeyboardKey.key_j)
         }
         Group {
-          Text("K").tag(KeyboardKey.key_k)
-          Text("L").tag(KeyboardKey.key_l)
-          Text("M").tag(KeyboardKey.key_m)
-          Text("N").tag(KeyboardKey.key_n)
-          Text("O").tag(KeyboardKey.key_o)
-          Text("P").tag(KeyboardKey.key_p)
-          Text("Q").tag(KeyboardKey.key_q)
-          Text("R").tag(KeyboardKey.key_r)
-          Text("S").tag(KeyboardKey.key_s)
-          Text("T").tag(KeyboardKey.key_t)
+          KeyOption(label: "K", value: KeyboardKey.key_k)
+          KeyOption(label: "L", value: KeyboardKey.key_l)
+          KeyOption(label: "M", value: KeyboardKey.key_m)
+          KeyOption(label: "N", value: KeyboardKey.key_n)
+          KeyOption(label: "O", value: KeyboardKey.key_o)
+          KeyOption(label: "P", value: KeyboardKey.key_p)
+          KeyOption(label: "Q", value: KeyboardKey.key_q)
+          KeyOption(label: "R", value: KeyboardKey.key_r)
+          KeyOption(label: "S", value: KeyboardKey.key_s)
+          KeyOption(label: "T", value: KeyboardKey.key_t)
         }
         Group {
-          Text("U").tag(KeyboardKey.key_u)
-          Text("V").tag(KeyboardKey.key_v)
-          Text("W").tag(KeyboardKey.key_w)
-          Text("X").tag(KeyboardKey.key_x)
-          Text("Y").tag(KeyboardKey.key_y)
-          Text("Z").tag(KeyboardKey.key_z)
+          KeyOption(label: "U", value: KeyboardKey.key_u)
+          KeyOption(label: "V", value: KeyboardKey.key_v)
+          KeyOption(label: "W", value: KeyboardKey.key_w)
+          KeyOption(label: "X", value: KeyboardKey.key_x)
+          KeyOption(label: "Y", value: KeyboardKey.key_y)
+          KeyOption(label: "Z", value: KeyboardKey.key_z)
           Divider()
         }
         Group {
-          Text("`").tag(KeyboardKey.key_grave)
-          Text("1").tag(KeyboardKey.key_1)
-          Text("2").tag(KeyboardKey.key_2)
-          Text("3").tag(KeyboardKey.key_3)
-          Text("4").tag(KeyboardKey.key_4)
-          Text("5").tag(KeyboardKey.key_5)
-          Text("6").tag(KeyboardKey.key_6)
-          Text("7").tag(KeyboardKey.key_7)
-          Text("8").tag(KeyboardKey.key_8)
-          Text("9").tag(KeyboardKey.key_9)
+          KeyOption(label: "`", value: KeyboardKey.key_grave)
+          KeyOption(label: "1", value: KeyboardKey.key_1)
+          KeyOption(label: "2", value: KeyboardKey.key_2)
+          KeyOption(label: "3", value: KeyboardKey.key_3)
+          KeyOption(label: "4", value: KeyboardKey.key_4)
+          KeyOption(label: "5", value: KeyboardKey.key_5)
+          KeyOption(label: "6", value: KeyboardKey.key_6)
+          KeyOption(label: "7", value: KeyboardKey.key_7)
+          KeyOption(label: "8", value: KeyboardKey.key_8)
+          KeyOption(label: "9", value: KeyboardKey.key_9)
         }
         Group {
-          Text("0").tag(KeyboardKey.key_0)
-          Text("-").tag(KeyboardKey.key_dash)
-          Text("=").tag(KeyboardKey.key_equal)
+          KeyOption(label: "0", value: KeyboardKey.key_0)
+          KeyOption(label: "-", value: KeyboardKey.key_dash)
+          KeyOption(label: "=", value: KeyboardKey.key_equal)
           Divider()
         }
         Group {
-          Text("[").tag(KeyboardKey.key_bracketOpen)
-          Text("]").tag(KeyboardKey.key_bracketClose)
-          Text(";").tag(KeyboardKey.key_semiColon)
-          Text("'").tag(KeyboardKey.key_singleQuote)
-          Text(",").tag(KeyboardKey.key_comma)
-          Text(".").tag(KeyboardKey.key_dot)
-          Text("/").tag(KeyboardKey.key_slash)
-          Text("\\").tag(KeyboardKey.key_backSlash)
+          KeyOption(label: "[", value: KeyboardKey.key_bracketOpen)
+          KeyOption(label: "]", value: KeyboardKey.key_bracketClose)
+          KeyOption(label: ";", value: KeyboardKey.key_semiColon)
+          KeyOption(label: "'", value: KeyboardKey.key_singleQuote)
+          KeyOption(label: ",", value: KeyboardKey.key_comma)
+          KeyOption(label: ".", value: KeyboardKey.key_dot)
+          KeyOption(label: "/", value: KeyboardKey.key_slash)
+          KeyOption(label: "\\", value: KeyboardKey.key_backSlash)
           Divider()
         }
         Group {
-          Text("←").tag(KeyboardKey.key_arrowLeft)
-          Text("→").tag(KeyboardKey.key_arrowRight)
-          Text("↑").tag(KeyboardKey.key_arrowUp)
-          Text("↓").tag(KeyboardKey.key_arrowDown)
+          KeyOption(label: "←", value: KeyboardKey.key_arrowLeft)
+          KeyOption(label: "→", value: KeyboardKey.key_arrowRight)
+          KeyOption(label: "↑", value: KeyboardKey.key_arrowUp)
+          KeyOption(label: "↓", value: KeyboardKey.key_arrowDown)
           Divider()
         }
         Group {
-          Text("↵").tag(KeyboardKey.key_return)
-          Text("⌫").tag(KeyboardKey.key_backSpace)
-          Text("␣").tag(KeyboardKey.key_space)
+          KeyOption(label: "↵", value: KeyboardKey.key_return)
+          KeyOption(label: "⌫", value: KeyboardKey.key_backSpace)
+          KeyOption(label: "␣", value: KeyboardKey.key_space)
           Divider()
         }
         Group {
-          Text("PgUp").tag(KeyboardKey.key_pageUp)
-          Text("PgDown").tag(KeyboardKey.key_pageDown)
-          Text("Home").tag(KeyboardKey.key_home)
-          Text("End").tag(KeyboardKey.key_end)
+          KeyOption(label: "PgUp", value: KeyboardKey.key_pageUp)
+          KeyOption(label: "PgDown", value: KeyboardKey.key_pageDown)
+          KeyOption(label: "Home", value: KeyboardKey.key_home)
+          KeyOption(label: "End", value: KeyboardKey.key_end)
           Divider()
         }
         Group {
-          Text("Esc").tag(KeyboardKey.key_esc)
-          Text("Del").tag(KeyboardKey.key_delete)
+          KeyOption(label: "Esc", value: KeyboardKey.key_esc)
+          KeyOption(label: "Del", value: KeyboardKey.key_delete)
         }
       }
     )

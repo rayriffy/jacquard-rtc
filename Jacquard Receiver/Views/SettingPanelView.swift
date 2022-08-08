@@ -9,13 +9,13 @@ import SwiftUI
 
 struct SettingPanelView: View {
   var label: String
-  @ObservedObject var gestureKeyboard: GestureKeyboard
+  @EnvironmentObject var gestureKeyboard: GestureKeyboard
   
   @State var isShowPopover = false
 
   var body: some View {
     HStack {
-      KeyboardPicker(label: label, selection: $gestureKeyboard.keyboardKey)
+      KeyboardPicker(label: label, gestureKeyboard: gestureKeyboard)
       Button(action: {
         self.isShowPopover.toggle()
       }, label: {
