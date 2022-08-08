@@ -47,6 +47,10 @@ What's included?
         <img src="./images/transmitter.jpg" />
         <p>Requirements: <b>iOS 16.0+</b></p>
         <p>An iPhone application to foward gestures from Jacquard tag to your Mac</p>
+        <details>
+          <summary>Live activities also available</summary>
+          <img src="./images/live-activity.jpg" />
+        </details>
       </td>
       <td>
         <img src="./images/receiver.jpg" />
