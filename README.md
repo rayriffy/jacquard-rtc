@@ -3,7 +3,7 @@ Jacquard RTC
 
 Real-time communication application form Google Jacquard tag to macOS
 
-![](./images/draft.jpg)
+![](./images/demo.gif)
 
 Abstract
 ---
@@ -13,6 +13,8 @@ Want to use your Google Jacquard equipped jacket with your Mac? Now you can send
 For an example, you can brush in-out from your jacket to press an arrow key on your Mac in order to control your presentation.
 
 This project is built with via [Bonjour](https://developer.apple.com/bonjour/) in mind, that means this project is communicate between iPhone, and Mac in peer-to-peer protocol. No need for centralized server!
+
+![](./images/draft.jpg)
 
 Feature
 ---
