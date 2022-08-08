@@ -23,7 +23,7 @@ struct ConnectingView: View {
 
   var body: some View {
     VStack {
-      if let connectedTag = connectedTag {
+      if connectedTag != nil {
         ControllerView(jacquardTag: $connectedTag)
       } else {
         Text(lastConnectionStateDescription)
