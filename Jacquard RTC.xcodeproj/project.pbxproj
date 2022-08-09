@@ -12,7 +12,6 @@
 		F21CC86028985D6D00C7FEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC85F28985D6D00C7FEED /* Assets.xcassets */; };
 		F21CC86428985D6D00C7FEED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */; };
 		F21CC86C28985DA600C7FEED /* JacquardSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F21CC86B28985DA600C7FEED /* JacquardSDK */; };
-		F2346C1E28A19A5A004CA1E0 /* LiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2346C1D28A19A5A004CA1E0 /* LiveActivity.swift */; };
 		F24B970D289D2D100062727E /* ControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B970C289D2D100062727E /* ControllerView.swift */; };
 		F24B9710289D333C0062727E /* MultipeerKit in Frameworks */ = {isa = PBXBuildFile; productRef = F24B970F289D333C0062727E /* MultipeerKit */; };
 		F24B9713289D35F50062727E /* TransmitterPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B9712289D35F50062727E /* TransmitterPayload.swift */; };
@@ -94,7 +93,6 @@
 		F21CC86128985D6D00C7FEED /* Jacquard_RTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jacquard_RTC.entitlements; sourceTree = "<group>"; };
 		F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F21CC86D28985E2400C7FEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
-		F2346C1D28A19A5A004CA1E0 /* LiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivity.swift; sourceTree = "<group>"; };
 		F24B970C289D2D100062727E /* ControllerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F24B9712289D35F50062727E /* TransmitterPayload.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TransmitterPayload.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F2841CBE289F250500A054E2 /* GestureKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureKeyboard.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 		F21CC85A28985D6D00C7FEED /* Jacquard Transmitter */ = {
 			isa = PBXGroup;
 			children = (
-				F2346C1C28A19A3D004CA1E0 /* ObservableObject */,
 				F2C36785289EA5AA00927197 /* Extensions */,
 				F2B5F5702899537A00115789 /* Views */,
 				F21CC86D28985E2400C7FEED /* Info.plist */,
@@ -214,14 +211,6 @@
 				F21CC86328985D6D00C7FEED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F2346C1C28A19A3D004CA1E0 /* ObservableObject */ = {
-			isa = PBXGroup;
-			children = (
-				F2346C1D28A19A5A004CA1E0 /* LiveActivity.swift */,
-			);
-			path = ObservableObject;
 			sourceTree = "<group>";
 		};
 		F24B9711289D35E00062727E /* Codable */ = {
@@ -538,7 +527,6 @@
 				F2841CD1289FD32A00A054E2 /* PeerToggle.swift in Sources */,
 				F2C367A3289ECE1A00927197 /* Cancellable.swift in Sources */,
 				F24B970D289D2D100062727E /* ControllerView.swift in Sources */,
-				F2346C1E28A19A5A004CA1E0 /* LiveActivity.swift in Sources */,
 				F2B5F574289953A200115789 /* ConnectingView.swift in Sources */,
 				F2841CDA289FDCD700A054E2 /* MultipeerDevices.swift in Sources */,
 				F2841CD7289FDBE100A054E2 /* MultipeerDevicesView.swift in Sources */,
