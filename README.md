@@ -77,7 +77,7 @@ How to use it?
 
 > Notes: Reciever will require Acccessibility permission on your macOS, you can enable it in System Preferences first before launch to avoid permission popup to appear
 
-6. Select correct peer on both iOS, and macOS sides.
+4. Select correct peer on both iOS, and macOS sides.
 5. Swipe your jacket, then everything should be work magically
 
 What's next?
