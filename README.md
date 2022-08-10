@@ -8,11 +8,11 @@ Real-time communication application form Google Jacquard tag to macOS
 Abstract
 ---
 
-Want to use your Google Jacquard equipped jacket with your Mac? Now you can send Jacquard gesture to your Mac, and call an action to press a keystroke
+Want to use your Google Jacquard equipped product with your Mac? Now you can send gesture from Jcaquard woven to your Mac, and call an action to press a keystroke
 
-For an example, you can brush in-out from your jacket to press an arrow key on your Mac in order to control your presentation.
+For an example, you can brush in-out from your jacket to press an arrow key on your Mac in order to control Keynote presentation. Or press keycombo to trigger [Keysmith](https://www.keysmith.app/) macro
 
-This project is built with via [Bonjour](https://developer.apple.com/bonjour/) in mind, that means this project is communicate between iPhone, and Mac in peer-to-peer protocol. No need for centralized server!
+This project is built with [Bonjour](https://developer.apple.com/bonjour/) in mind, this means that iPhone, and Mac can communicate to each other via peer-to-peer protocol. No need for centralized server!
 
 ![](./images/draft.jpg)
 
