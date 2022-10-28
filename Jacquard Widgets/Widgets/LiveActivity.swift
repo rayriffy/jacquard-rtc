@@ -11,7 +11,7 @@ import WidgetKit
 
 struct JacquardActivityWidget: Widget {
   var body: some WidgetConfiguration {
-    ActivityConfiguration(attributesType: JacquardActivityAttributes.self) {
+    ActivityConfiguration(for: JacquardActivityAttributes.self) {
       context in
       VStack(alignment: .leading) {
         HStack(alignment: .center) {
@@ -45,6 +45,20 @@ struct JacquardActivityWidget: Widget {
           
         }
       }.padding(20)
+    } dynamicIsland: { context in
+      DynamicIsland {
+        DynamicIslandExpandedRegion(.leading) {
+            Text("amogus")
+        }
+      } compactLeading: {
+        Text("👋🏻 \(context.state.gesture.sentAmount)")
+      } compactTrailing: {
+        Text("\(context.state.selectedPeersCount) 📡")
+      } minimal: {
+        VStack(alignment: .center) {
+          Text("📡")
+        }
+      }
     }
   }
 }
