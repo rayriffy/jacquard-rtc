@@ -24,14 +24,17 @@ struct ControllerView: View {
   @State private var jacquardActivityCard: Activity<JacquardActivityAttributes>? = nil
   
   func updateLiveActivity() async {
-    await jacquardActivityCard?.update(using: .init(
-      foundPeersCount: multipeerDevices.availablePeers.count,
-      selectedPeersCount: peerSelector.selectedPeers.count,
-      gesture: .init(
-        lastGestureName: lastGestures.last ?? "None",
-        lastGestureSentTime: lastGestureSentDate,
-        sentAmount: lastGestures.count
-      )
+    await jacquardActivityCard?.update(ActivityContent(
+      state: JacquardActivityAttributes.ContentState(
+        foundPeersCount: multipeerDevices.availablePeers.count,
+        selectedPeersCount: peerSelector.selectedPeers.count,
+        gesture: .init(
+          lastGestureName: lastGestures.last ?? "None",
+          lastGestureSentTime: lastGestureSentDate,
+          sentAmount: lastGestures.count
+        )
+      ),
+      staleDate: nil
     ))
   }
 
@@ -63,7 +66,7 @@ struct ControllerView: View {
 
       // stop live activity
       Task {
-        await jacquardActivityCard?.end(using: .none, dismissalPolicy: .immediate)
+        await jacquardActivityCard?.end(.none, dismissalPolicy: .immediate)
       }
     }
     .task {
@@ -111,10 +114,13 @@ struct ControllerView: View {
           attributes: .init(
             jacquardDisplayName: jacquardTag?.displayName ?? ""
           ),
-          contentState: .init(
-            foundPeersCount: 0,
-            selectedPeersCount: 0,
-            gesture: .init(lastGestureName: "None", lastGestureSentTime: .now, sentAmount: 0)
+          content: ActivityContent(
+            state: JacquardActivityAttributes.ContentState(
+              foundPeersCount: 0,
+              selectedPeersCount: 0,
+              gesture: .init(lastGestureName: "None", lastGestureSentTime: .now, sentAmount: 0)
+            ),
+            staleDate: nil
           ),
           pushType: nil
         )
